@@ -30,11 +30,7 @@ public class FXMLDocumentController implements Initializable {
     //                      when the button has the focus and enter is pressed
     @FXML
     private void handleButtonAction(ActionEvent event) {
-<<<<<<< HEAD
         labelMessage.setText("Cambio Netbeans 1");
-=======
-        labelMessage.setText("Cambio 2 a ver!");
->>>>>>> 645faf22e4176e515bb509e07c6577bc9c0e411e
     }
     
     //=========================================================
