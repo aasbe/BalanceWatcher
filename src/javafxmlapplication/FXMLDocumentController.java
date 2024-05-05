@@ -33,7 +33,7 @@ public class FXMLDocumentController implements Initializable {
 
         labelMessage.setText("Cambio Netbeans 1");
 
-        labelMessage.setText("Cambio 2 a ver!"); //se queda el 2o
+        labelMessage.setText("Clickk"); //se queda el 2o
 
     }
     
