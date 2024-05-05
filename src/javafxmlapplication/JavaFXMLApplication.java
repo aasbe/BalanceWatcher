@@ -24,8 +24,12 @@ public class JavaFXMLApplication extends Application {
         Parent root = loader.load();
         //======================================================================
         // 2- creación de la escena con el nodo raiz del grafo de escena
-        Scene scene = new Scene(root, Color.BLACK);
+        Scene scene = new Scene(root,600,600, Color.LIGHTGREEN);
         //======================================================================
+        
+        //Logo del proyecto
+        Image icon = new Image ("logoproject.jpg");
+        stage.getIcons().add(icon);
         // 3- asiganación de la escena al Stage que recibe el metodo 
         //     - configuracion del stage
         //     - se muestra el stage de manera no modal mediante el metodo show()
