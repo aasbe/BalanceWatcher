@@ -36,7 +36,7 @@ public class JavaFXMLApplication extends Application {
         //     - se muestra el stage de manera no modal mediante el metodo show()
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
-        stage.setWidth(600);
+      //   stage.setWidth(600);
       //  stage.setFullScreen(true);
         
         stage.show();
