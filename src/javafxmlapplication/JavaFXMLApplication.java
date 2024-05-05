@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 
 
 public class JavaFXMLApplication extends Application {
@@ -29,6 +31,7 @@ public class JavaFXMLApplication extends Application {
         //     - se muestra el stage de manera no modal mediante el metodo show()
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
+        stage.setWidth(600);
         
         stage.show();
     }
