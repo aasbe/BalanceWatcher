@@ -32,6 +32,7 @@ public class JavaFXMLApplication extends Application {
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
         stage.setWidth(600);
+      //  stage.setFullScreen(true);
         
         stage.show();
     }
