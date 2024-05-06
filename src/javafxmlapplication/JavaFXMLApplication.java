@@ -9,10 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 
 
 public class JavaFXMLApplication extends Application {
@@ -21,24 +18,17 @@ public class JavaFXMLApplication extends Application {
     public void start(Stage stage) throws Exception {
         //======================================================================
         // 1- creación del grafo de escena a partir del fichero FXML
-        FXMLLoader loader= new  FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        FXMLLoader loader= new  FXMLLoader(getClass().getResource("REGISTRO.fxml"));
         Parent root = loader.load();
         //======================================================================
         // 2- creación de la escena con el nodo raiz del grafo de escena
-        Scene scene = new Scene(root,600,600, Color.LIGHTGREEN);
+        Scene scene = new Scene(root);
         //======================================================================
-        
-        //Logo del proyecto
-        Image icon = new Image ("logoproject.jpg");
-        stage.getIcons().add(icon);
         // 3- asiganación de la escena al Stage que recibe el metodo 
         //     - configuracion del stage
         //     - se muestra el stage de manera no modal mediante el metodo show()
         stage.setScene(scene);
-        stage.setTitle("BalanceWatcher");
-        stage.setWidth(600);
-      //  stage.setFullScreen(true);
-        
+        stage.setTitle("BALANCE WATCHER");
         stage.show();
     }
 
