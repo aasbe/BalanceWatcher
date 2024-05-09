@@ -9,16 +9,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -40,14 +36,56 @@ public class REGISTROController implements Initializable {
     @FXML
     private Button atras;
     @FXML
-    private MenuButton selecciona;
+    private Button selecciona;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
+    
+    @FXML
+    public void siguiente(ActionEvent event)throws IOException{
+        
+            String Nombre = nombre.getText();
+            String Correo = correo.getText();
+            String Usuario = usuario.getText();
+            String Contraseña = contraseña.getText();
+        
+        if(Nombre.isEmpty()||Correo.isEmpty()||Usuario.isEmpty()||Contraseña.isEmpty()){
+            
+            Alert error = new Alert (AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("No ha rellenado todos los campos obligatorios * ");
+            error.showAndWait();
+        }
+        else{
+            
+            if(Usuario.contains(" ")){
+                Alert error = new Alert(AlertType.ERROR);
+                error.setTitle("Error");
+                error.setHeaderText("El usuario no ha de tener espacios");
+                error.showAndWait();
+                usuario.clear();
+            }
+            else if(Contraseña.length()<7){
+                Alert error = new Alert(AlertType.ERROR);
+                error.setTitle("Error");
+                error.setHeaderText("La contraseña ha de tener mínimo 6 carácteres");
+                error.showAndWait();
+                contraseña.clear();
+            }
+           
+        }
+    }
+    
+    @FXML
+    public void atras (ActionEvent event) throws IOException{
+        ((Button)event.getSource()).getScene().getWindow().hide();
+    }
     
 }

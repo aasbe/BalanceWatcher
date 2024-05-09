@@ -3,8 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
@@ -58,12 +56,6 @@
             </VBox>
             <TextField fx:id="nombre" maxWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" />
             <TextField fx:id="correo" maxWidth="-Infinity" prefHeight="25.0" prefWidth="269.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <MenuButton fx:id="selecciona" mnemonicParsing="false" text="Selecciona" GridPane.columnIndex="1" GridPane.rowIndex="4">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Subir archivo" />
-                <MenuItem mnemonicParsing="false" text="Hacer foto" />
-              </items>
-            </MenuButton>
             <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="41.0" prefWidth="329.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <TextField fx:id="usuario" prefHeight="25.0" prefWidth="237.0" />
@@ -79,6 +71,7 @@
                   <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="(mínimo 6 carácteres)" />
                </children>
             </HBox>
+            <Button fx:id="selecciona" mnemonicParsing="false" text="Selecciona" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </center>
@@ -121,7 +114,7 @@
          <children>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="siguiente" mnemonicParsing="false" prefHeight="37.0" prefWidth="93.0" style="-fx-background-color: #3CB371;" text="Siguiente" textFill="WHITE">
+                  <Button fx:id="siguiente" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #3CB371;" text="Siguiente" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -129,7 +122,7 @@
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="74.0" prefWidth="309.0">
                <children>
-                  <Button fx:id="atras" mnemonicParsing="false" prefHeight="41.0" prefWidth="50.0" text="&lt;-">
+                  <Button fx:id="atras" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: FF0000;" text="Atrás">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
