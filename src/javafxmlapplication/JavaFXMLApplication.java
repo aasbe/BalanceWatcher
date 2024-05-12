@@ -31,6 +31,9 @@ public class JavaFXMLApplication extends Application {
         //Logo del proyecto
         Image icon = new Image ("logoproject.jpg");
         stage.getIcons().add(icon);
+        //.css
+        String css = this.getClass().getResource("estiloBotones.css").toExternalForm();
+        scene.getStylesheets().add(css);
         // 3- asiganación de la escena al Stage que recibe el metodo 
         //     - configuracion del stage
         //     - se muestra el stage de manera no modal mediante el metodo show()
