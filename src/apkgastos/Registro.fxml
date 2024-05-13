@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tenisclubtest.RegistroController">
+   <children>
+      <TextField fx:id="mostrarRepetirContraseña" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="214.0" visible="false" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#118061" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.3999877929688" minWidth="10.0" prefWidth="111.6000045776367" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.00001373291013" minWidth="10.0" prefWidth="275.40003662109376" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="176.99996337890622" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.800048828125" minWidth="0.0" prefWidth="57.99997558593748" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="70.9999870300293" minHeight="10.0" prefHeight="19.999994659423834" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="120.80000534057618" minHeight="10.0" prefHeight="53.60000305175781" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.39999084472657" minHeight="10.0" prefHeight="23.799999999999997" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="108.79998779296875" minHeight="10.0" prefHeight="46.39997558593748" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="112.00001831054686" minHeight="10.0" prefHeight="46.40001831054687" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="103.20001220703125" minHeight="10.0" prefHeight="49.39996643066405" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="109.60001220703123" minHeight="10.0" prefHeight="48.79998779296878" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="115.20001220703125" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Únete a nosotros..." GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <Glow level="0.51" />
+               </effect>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre*" wrappingWidth="375.3711242675781" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono*" wrappingWidth="296.9711608886719" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="nombre" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+            <TextField fx:id="telefono" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido*" wrappingWidth="253.77108764648438" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nº de la tarjeta" wrappingWidth="211.37112426757812" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="apellido" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+            <TextField fx:id="tarjeta" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="211.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario*" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="usuario" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="186.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" wrappingWidth="375.3711242675781" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="cvc" maxWidth="-Infinity" onKeyPressed="#unirseEnter" prefHeight="26.0" prefWidth="85.0" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña*" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecciona tu avatar:" wrappingWidth="151.37112426757812" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="botonAvatar" mnemonicParsing="false" onAction="#avatar" onKeyPressed="#unirseEnter" opacity="0.7" style="-fx-background-color: #000000;" text="Seleccionar" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir contraseña*" wrappingWidth="251.37112426757812" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="botonUnirse" mnemonicParsing="false" onAction="#unirse" prefWidth="70.0" style="-fx-background-color: #6DAD6D;" text="Unirse" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="botonVolver" mnemonicParsing="false" onAction="#volver" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Volver" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*ESTE CAMPO ES OBLIGATORIO" wrappingWidth="217.4700469970703" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <PasswordField fx:id="repetirContraseña" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="TOP" />
+            <PasswordField fx:id="contraseña" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+            <TextField fx:id="mostrarContraseña" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="214.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+            <ImageView fitHeight="53.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ImageView fitHeight="54.0" fitWidth="146.0" translateX="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../build/classes/Picture1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
