@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tenisclubtest.MiembroController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.MiembroController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#118061" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <GridPane layoutX="63.0" layoutY="83.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -58,7 +58,7 @@
                </font>
             </Text>
             <PasswordField fx:id="contraseña" onKeyPressed="#entrar" prefHeight="25.0" prefWidth="225.0" promptText="Contraseña" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-            <Button fx:id="entrarPista" mnemonicParsing="false" onAction="#acceder" prefWidth="70.0" style="-fx-background-color: #6DAD6D;" text="Acceder" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Button fx:id="entrarPista" mnemonicParsing="false" onAction="#acceder" prefWidth="70.0" style="-fx-background-color: #6DAD6D;" text="Acceder" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
             <CheckBox fx:id="mostrarfxID" mnemonicParsing="false" onAction="#bMostrar" prefHeight="18.0" prefWidth="137.0" text="Mostrar contraseña" textFill="#ffffffd8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP" />
-            <Button fx:id="volver" mnemonicParsing="false" onAction="#vueltaInicio" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Volver" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Button fx:id="volver" mnemonicParsing="false" onAction="#vueltaInicio" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Volver" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

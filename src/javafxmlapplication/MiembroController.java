@@ -66,7 +66,7 @@ public class MiembroController implements Initializable {
         }
     }
     
-    
+    /* COMENTO DESDE AQUÍ PARA COMPILAR
     @FXML
     public void acceder(ActionEvent event) throws IOException{
         
@@ -177,6 +177,6 @@ public class MiembroController implements Initializable {
 
         }
     }
-    
+    */
     
 }

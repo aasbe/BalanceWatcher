@@ -47,11 +47,11 @@ public class InicioController implements Initializable {
     
    
     
-    
+    /*Ir a la escena "Miembro"*/
     @FXML
     private void irMiembro(ActionEvent event) throws IOException {
         texto.setText("");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafxmlapplication/Miembro.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Miembro.fxml"));
         Parent root = loader.load();
         // acceso al controlador de datos persona
         Scene scene = new Scene(root);
@@ -61,15 +61,16 @@ public class InicioController implements Initializable {
         stage.show();
        
     }
-    
+    /*Ir a la escena REGISTRO*/
     @FXML
     private void irRegistrar(ActionEvent event) throws IOException{
         
         texto.setText("");
-        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/REGISTRO.fxml"));
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("REGISTRO.fxml"));
         
         Parent root = miCargador.load();
-        RegistroController controlador = miCargador.getController();
+        //Lo comento para que compile
+        // AQUI (1/2) RegistroController controlador = miCargador.getController();
         // acceso al controlador de datos persona
         Scene scene = new Scene(root);
         Stage stage = new Stage();
@@ -77,9 +78,9 @@ public class InicioController implements Initializable {
         stage.setTitle("Registrarse");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
-        if(controlador.seHaPulsado()){
+       /*AQUI (2/2) if(controlador.seHaPulsado()){
             texto.setText("Ya has sido registrado, "+controlador.getUsuario()+". Inicia sesión para reservar pista.");
-        }
+        } */
         //texto.setText(imprimir);
         
     }
