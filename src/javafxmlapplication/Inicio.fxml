@@ -26,20 +26,22 @@
         <rowConstraints>
             <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="27.199995803833005" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="35.80000305175781" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="244.1999969482422" minHeight="10.0" prefHeight="208.59999694824222" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="64.4" minHeight="10.0" prefHeight="35.80000305175781" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="244.1999969482422" minHeight="10.0" prefHeight="208.59999694824222" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="162.19998779296878" minHeight="10.0" prefHeight="82.80001831054688" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="87.79999389648435" minHeight="10.0" prefHeight="24.600012207031227" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#118060" height="547.0" stroke="BLACK" strokeType="INSIDE" width="644.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#118060" height="547.0" stroke="BLACK" strokeType="INSIDE" width="644.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="-75.0" right="50.0" top="-150.0" />
                </GridPane.margin>
             </Rectangle>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="miembro" mnemonicParsing="false" onAction="#irMiembro" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #6DAD6D;" text="Ya soy miembro" textFill="WHITE" translateY="20.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+            <Button fx:id="miembro" mnemonicParsing="false" onAction="#irMiembro" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #6DAD6D;" text="Ya soy miembro" textFill="WHITE" translateY="20.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
@@ -47,7 +49,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="registrar" mnemonicParsing="false" onAction="#irRegistrar" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #6DAD6D;" text="Registrarse" textFill="WHITE" translateY="50.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Button fx:id="registrar" mnemonicParsing="false" onAction="#irRegistrar" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #6DAD6D;" text="Registrarse" textFill="WHITE" translateY="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
@@ -55,7 +57,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Salir" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Salir" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -64,7 +66,7 @@
                </font>
             </Button>
             <Text fx:id="texto" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="416.80340576171875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ButtonBar prefHeight="203.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ButtonBar prefHeight="203.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <buttons>
                   <ImageView fitHeight="194.0" fitWidth="365.0">
                      <image>
