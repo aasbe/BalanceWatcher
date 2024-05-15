@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package apkgastos;
+package javafxmlapplication;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,7 +34,7 @@ import javafx.stage.Modality;
  *
  * @author MVEGICAS
  */
-public class RegistroController implements Initializable {
+public class RegistroControllerapk implements Initializable {
 
   
     @FXML
@@ -233,6 +233,7 @@ public class RegistroController implements Initializable {
         }        
     }
 
+    /* Comment 1: por la imagen
     @FXML
     private void avatar(ActionEvent event) throws IOException {
          FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/tenisclubtest/Imagen.fxml"));
@@ -262,7 +263,7 @@ public class RegistroController implements Initializable {
         return seHaPulsadoBotonUnirse;
     }
     
-    
+    */
 
     @FXML
     private void unirseEnter(KeyEvent event) {

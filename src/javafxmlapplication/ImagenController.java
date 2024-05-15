@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package apkgastos;
+package javafxmlapplication;
 
 import java.awt.Image;
 import java.io.FileInputStream;
@@ -18,11 +18,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
- * FXML Controller class
- *
- * @author MVEGICAS
+ 
  */
-
+/* Comment 1/3
 public class ImagenController implements Initializable {
 
     @FXML
@@ -57,13 +55,13 @@ public class ImagenController implements Initializable {
     private boolean pulsadoOK=false;
    
     
-    
+    */
 
     /**
      * Initializes the controller class.
      */
       
-
+/*Comment 2/3
     @FXML
     private void seleccionarAvatar(ActionEvent event) {
         pulsadoOK=true;
@@ -73,7 +71,8 @@ public class ImagenController implements Initializable {
         return pulsadoOK;
     }
 
-    
+    */
+/* Comment 3/3
     public javafx.scene.image.Image getImagen(){
         return miImagen.getImage();
     }
@@ -158,3 +157,4 @@ public class ImagenController implements Initializable {
     }
     
 }
+*/

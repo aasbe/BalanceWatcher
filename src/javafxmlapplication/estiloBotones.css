@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 /* 
 Cambio de clases: le das con .class, ejemplo .button - por defecto los botones estarán en lightgreen
 */
-.button {-fx-background-color: lightgreen;}
+.button {-fx-background-color: lightgreen;} 
 
 /* Cambio por id: los que no estén cambiados en el sceenbuilder específicamente, se cambian con #nombre */
 #siguiente {-fx-background-color: orange} /*no se cambia porque está editado en en scenebuilder que tiene prioridad*/
