@@ -41,12 +41,22 @@ public class InicioController implements Initializable {
     private Button salirfxID;
     
     @FXML
-    public void irMiembro(ActionEvent event) throws IOException {
-        root =  FXMLLoader.load(getClass().getResource("PRINCIPAL.fxml"));
+    public void irAutenticacion(ActionEvent event) throws IOException {
+        root =  FXMLLoader.load(getClass().getResource("Autenticacion.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Acceder");
+        stage.setTitle("Autenticación");
+        stage.show();
+    } 
+    
+    @FXML
+    public void irRegistro(ActionEvent event) throws IOException {
+        root =  FXMLLoader.load(getClass().getResource("REGISTRO.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Registro");
         stage.show();
     } 
  @FXML
