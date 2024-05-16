@@ -33,7 +33,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="salimos" mnemonicParsing="false" onAction="#bSalir" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Salir" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+      <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: fb0000;" text="Salir" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
