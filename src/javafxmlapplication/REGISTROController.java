@@ -98,7 +98,7 @@ public class REGISTROController implements Initializable {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Autenticación");
+        stage.setTitle("BalanceWatcher");
         stage.show();
     } 
     

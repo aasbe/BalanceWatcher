@@ -40,12 +40,12 @@
       </HBox>
       <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
          <children>
-            <Button mnemonicParsing="false" text="Atrás" />
+            <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" text="Atrás" />
          </children>
       </HBox>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
-            <Button mnemonicParsing="false" text="Acceder" />
+            <Button fx:id="acceder" mnemonicParsing="false" onAction="#acceder" text="Acceder" />
          </children>
       </HBox>
    </children>

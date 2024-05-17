@@ -23,6 +23,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 
 public class InicioController implements Initializable {
@@ -62,8 +65,14 @@ public class InicioController implements Initializable {
  @FXML
     private void bSalir(ActionEvent event) {
         
+        /*confirmación de salir*/
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Salir");
+        alert.setHeaderText("SALIENDO DE LA APLICACIÓN");
+        alert.setContentText("¿Seguro que desea salir?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
         Stage myStage= (Stage) this.salirfxID.getScene().getWindow();
-        myStage.close();
+        myStage.close();}
     }
 
     
