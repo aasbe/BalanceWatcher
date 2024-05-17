@@ -6,9 +6,12 @@
 package javafxmlapplication;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.layout.BorderPane;
@@ -43,8 +46,19 @@ public class JavaFXMLApplication extends Application {
       //  stage.setFullScreen(true);
         
         stage.show();
+        stage.setOnCloseRequest(event-> { event.consume(); bSalir(stage);});
     }
 
+    private void bSalir(Stage stage) {
+        
+        /*confirmación de salir*/
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Salir");
+        alert.setHeaderText("SALIENDO DE LA APLICACIÓN");
+        alert.setContentText("¿Seguro que desea salir?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+        stage.close();}
+    }
     /**
      * @param args the command line arguments
      */
