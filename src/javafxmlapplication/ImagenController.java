@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
 package javafxmlapplication;
 
 import java.awt.Image;
@@ -20,39 +21,32 @@ import javafx.scene.input.MouseEvent;
 /**
  
  */
-/* Comment 1/3
+/*
 public class ImagenController implements Initializable {
 
     @FXML
-    private Button seleccionarAvatarBoton;
+    private Button seleccionar;
     @FXML
-    private ImageView imagen1;
+    private ImageView persona;
     @FXML
-    private ImageView imagen2;
+    private ImageView abeja;
     @FXML
-    private ImageView imagen3;
+    private ImageView delfin;
     @FXML
-    private ImageView imagen4;
+    private ImageView vaca;
     @FXML
-    private ImageView imagen5;
+    private ImageView cerdo;
     @FXML
-    private ImageView imagen6;
+    private ImageView ardilla;
     @FXML
-    private ImageView imagen7;
+    private ImageView zorro;
     @FXML
-    private ImageView imagen8;
+    private ImageView panda;
     @FXML
-    private ImageView imagen9;
+    private ImageView pato;
     @FXML
-    private ImageView imagen10;
-    @FXML
-    private ImageView imagen11;
-    @FXML
-    private ImageView imagen12;
-    @FXML
-    private ImageView miImagen;
-    @FXML
-    private boolean pulsadoOK=false;
+    private ImageView elegido;
+    private boolean pulsado=false;
    
     
     */
@@ -60,100 +54,71 @@ public class ImagenController implements Initializable {
     /**
      * Initializes the controller class.
      */
-      
-/*Comment 2/3
+    /*  
     @FXML
-    private void seleccionarAvatar(ActionEvent event) {
-        pulsadoOK=true;
+    private void seleccionar(ActionEvent event) {
+        pulsado=true;
         ((Button)event.getSource()).getScene().getWindow().hide();    }
     
-    public boolean isOKPressed( ){
-        return pulsadoOK;
+    public boolean pulsadoOK( ){
+        return pulsado;
     }
 
-    */
-/* Comment 3/3
+    
     public javafx.scene.image.Image getImagen(){
-        return miImagen.getImage();
+        return elegido.getImage();
     }
     
     public void introducirImagen(javafx.scene.image.Image i){
-        miImagen.setImage(i);
+        elegido.setImage(i);
         
     }
 
 
-    @FXML
-    private void imagen1(MouseEvent event) {
+    private void persona(MouseEvent event) {
         
         
-        miImagen.setImage(imagen1.getImage());
+        elegido.setImage(persona.getImage());
     }
 
-    @FXML
-    private void imagen2(MouseEvent event) {
+    private void abeja (MouseEvent event) {
         
-        miImagen.setImage(imagen2.getImage());
+        elegido.setImage(abeja.getImage());
     }
 
-    @FXML
-    private void imagen3(MouseEvent event) {
+    private void delfin(MouseEvent event) {
         
-        miImagen.setImage(imagen3.getImage());
+        elegido.setImage(delfin.getImage());
     }
 
-    @FXML
-    private void imagen4(MouseEvent event) {
+    private void vaca(MouseEvent event) {
         
-        miImagen.setImage(imagen4.getImage());
+        elegido.setImage(vaca.getImage());
     }
 
-    @FXML
-    private void imagen5(MouseEvent event) {
+    private void cerdo(MouseEvent event) {
         
-        miImagen.setImage(imagen5.getImage());
+        elegido.setImage(cerdo.getImage());
     }
 
-    @FXML
-    private void imagen6(MouseEvent event) {
+    private void ardilla(MouseEvent event) {
         
-        miImagen.setImage(imagen6.getImage());
+        elegido.setImage(ardilla.getImage());
     }
 
-    @FXML
-    private void imagen7(MouseEvent event) {
+    private void zorro (MouseEvent event) {
         
-        miImagen.setImage(imagen7.getImage());
+        elegido.setImage(zorro.getImage());
     }
 
-    @FXML
-    private void imagen8(MouseEvent event) {
+    private void panda(MouseEvent event) {
         
-        miImagen.setImage(imagen8.getImage());
+        elegido.setImage(panda.getImage());
     }
 
-    @FXML
-    private void imagen9(MouseEvent event) {
+    private void pato(MouseEvent event) {
         
-        miImagen.setImage(imagen9.getImage());
-    }
-
-    @FXML
-    private void imagen10(MouseEvent event) {
-        
-        miImagen.setImage(imagen10.getImage());
-    }
-
-    @FXML
-    private void imagen11(MouseEvent event) {
-        
-        miImagen.setImage(imagen11.getImage());
-    }
-
-    @FXML
-    private void imagen12(MouseEvent event) {
-        
-        miImagen.setImage(imagen12.getImage());
+        elegido.setImage(pato.getImage());
     }
     
 }
