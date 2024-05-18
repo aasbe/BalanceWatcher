@@ -96,7 +96,7 @@ public class REGISTROController implements Initializable {
     public void volver(javafx.event.ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        scene = new Scene(root);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
         stage.show();
