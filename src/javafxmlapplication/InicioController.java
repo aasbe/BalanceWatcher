@@ -47,7 +47,7 @@ public class InicioController implements Initializable {
     public void irAutenticacion(ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("Autenticacion.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        scene = new Scene(root);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Autenticación");
         stage.show();
@@ -57,7 +57,7 @@ public class InicioController implements Initializable {
     public void irRegistro(ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("REGISTRO.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        scene = new Scene(root);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Registro");
         stage.show();
