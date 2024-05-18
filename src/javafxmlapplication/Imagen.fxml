@@ -9,69 +9,54 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="379.0" prefWidth="558.0" stylesheets="@intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tenisclubtest.ImagenController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="379.0" prefWidth="558.0" stylesheets="@intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.ImagenController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#118061" height="389.0" layoutX="-8.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="586.0" />
-      <TilePane layoutX="14.0" layoutY="-10.0" prefHeight="319.0" prefWidth="361.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DARKSEAGREEN" height="389.0" layoutX="-8.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="586.0" />
+      <TilePane hgap="10.0" layoutX="14.0" layoutY="-10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="300.0" prefRows="3" prefWidth="300.0" vgap="10.0">
          <children>
-            <ImageView fx:id="imagen1" fitHeight="82.0" fitWidth="74.0" onMouseClicked="#imagen1" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="persona" fitHeight="70.0" fitWidth="82.0" onMouseClicked="#imagen1" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../avatares/default.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen2" fitHeight="83.0" fitWidth="82.0" onMouseClicked="#imagen2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="abeja" fitHeight="73.0" fitWidth="65.0" onMouseClicked="#imagen2" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/men.PNG" />
+                  <Image url="@../avatares/🐝%20Honeybee%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen3" fitHeight="83.0" fitWidth="80.0" onMouseClicked="#imagen3" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="delfin" fitHeight="73.0" fitWidth="53.0" onMouseClicked="#imagen3" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/men2.PNG" />
+                  <Image url="@../avatares/🐬%20Dolphin%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen4" fitHeight="82.0" fitWidth="82.0" onMouseClicked="#imagen4" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="vaca" fitHeight="73.0" fitWidth="49.0" onMouseClicked="#imagen4" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/men4.PNG" />
+                  <Image url="@../avatares/🐮%20Cow%20Face%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen5" fitHeight="88.0" fitWidth="79.0" onMouseClicked="#imagen5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cerdo" fitHeight="80.0" fitWidth="47.0" onMouseClicked="#imagen5" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/men5.PNG" />
+                  <Image url="@../avatares/🐷%20Pig%20Face%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen6" fitHeight="85.0" fitWidth="75.0" onMouseClicked="#imagen6" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ardilla" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#imagen6" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/menglasses.png" />
+                  <Image url="@../avatares/🐿️%20Chipmunk%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen7" fitHeight="84.0" fitWidth="77.0" onMouseClicked="#imagen7" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="zorro" fitHeight="78.0" fitWidth="57.0" onMouseClicked="#imagen7" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/woman.PNG" />
+                  <Image url="@../avatares/🦊%20Fox%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen8" fitHeight="87.0" fitWidth="71.0" onMouseClicked="#imagen8" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="panda" fitHeight="76.0" fitWidth="54.0" onMouseClicked="#imagen8" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/woman2.PNG" />
+                  <Image url="@../avatares/🐼%20Panda%20Emoji.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imagen9" fitHeight="89.0" fitWidth="79.0" onMouseClicked="#imagen9" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pato" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#imagen10" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../avatares/woman3.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imagen10" fitHeight="90.0" fitWidth="75.0" onMouseClicked="#imagen10" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../avatares/woman4.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imagen11" fitHeight="87.0" fitWidth="78.0" onMouseClicked="#imagen11" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../avatares/woman5.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imagen12" fitHeight="86.0" fitWidth="72.0" onMouseClicked="#imagen12" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../avatares/woman6.PNG" />
+                  <Image url="@../avatares/🪿%20Goose%20Emoji.jpeg" />
                </image>
             </ImageView>
          </children>
@@ -82,19 +67,13 @@
             <Insets left="20.0" top="40.0" />
          </padding>
       </TilePane>
-      <Button fx:id="seleccionarAvatarBoton" layoutX="165.0" layoutY="316.0" mnemonicParsing="false" onAction="#seleccionarAvatar" opacity="0.7" prefHeight="49.0" prefWidth="224.0" style="-fx-background-color: #000000;" text="SELECCIONAR AVATAR" textFill="WHITE">
+      <Button fx:id="seleccionar" layoutX="165.0" layoutY="316.0" mnemonicParsing="false" onAction="#seleccionar" prefHeight="49.0" prefWidth="224.0" style="-fx-background-color: #64bcff;" text="SELECCIONAR PERFIL" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="17.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Button>
-      <ImageView fx:id="miImagen" fitHeight="150.0" fitWidth="200.0" layoutX="389.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="elegido" fitHeight="150.0" fitWidth="200.0" layoutX="334.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../avatares/default.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="358.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="50.0" fitWidth="123.0" layoutX="441.0" layoutY="14.0">
-         <image>
-            <Image url="@../Picture1.png" />
          </image>
       </ImageView>
    </children>
