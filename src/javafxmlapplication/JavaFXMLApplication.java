@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -28,7 +28,7 @@ public class JavaFXMLApplication extends Application {
         Parent root = loader.load();
         //======================================================================
         // 2- creación de la escena con el nodo raiz del grafo de escena
-        Scene scene = new Scene(root,600,600, Color.LIGHTGREEN);
+        Scene scene = new Scene(root,800,400);
         //======================================================================
         
         //Logo del proyecto
@@ -42,7 +42,6 @@ public class JavaFXMLApplication extends Application {
         //     - se muestra el stage de manera no modal mediante el metodo show()
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
-      //   stage.setWidth(600);
       //  stage.setFullScreen(true);
         
         stage.show();
