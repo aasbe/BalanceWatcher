@@ -7,93 +7,92 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<GridPane prefHeight="401.0" prefWidth="600.0" style="-fx-background-color: #8FBC8F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.REGISTROController">
-  <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.REGISTROController">
    <children>
-      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+      <VBox alignment="CENTER" prefHeight="401.0" prefWidth="463.0" HBox.hgrow="ALWAYS">
          <children>
-            <Button fx:id="siguiente" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #3CB371;" text="Siguiente" textFill="WHITE">
+            <Label text="Crear una cuenta..." textFill="DARKSEAGREEN">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Bernard MT Condensed" size="40.0" />
                </font>
-            </Button>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="324.0" prefWidth="539.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Nombre*" />
+                        <TextField fx:id="nombre" maxWidth="-Infinity" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Usuario*" />
+                        <TextField fx:id="usuario" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Contraseña*" />
+                        <PasswordField fx:id="contraseña" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Correo electrónico*" />
+                        <TextField fx:id="correo" maxWidth="-Infinity" prefWidth="250.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Foto de perfil" />
+                        <Button fx:id="selecciona" mnemonicParsing="false" text="Selecciona" />
+                        <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="* estos campos son obligatorios" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="539.0" spacing="300.0">
+               <children>
+                  <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: FF0000;" text="Atrás" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="siguiente" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Siguiente" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-         <GridPane.margin>
-            <Insets bottom="20.0" right="20.0" />
-         </GridPane.margin>
-      </HBox>
-      <HBox alignment="BOTTOM_LEFT" prefHeight="74.0" prefWidth="309.0" GridPane.rowIndex="6">
+         <HBox.margin>
+            <Insets top="20.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="401.0" prefWidth="269.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">
          <children>
-            <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: FF0000;" text="Atrás" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-         </children>
-         <GridPane.margin>
-            <Insets bottom="20.0" left="20.0" />
-         </GridPane.margin>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="583.0" GridPane.columnSpan="6">
-         <children>
-            <ImageView fitHeight="196.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/logoIPC-removebg-preview.png" />
+                  <Image url="@../LogoOficial.png" />
                </image>
             </ImageView>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
-         <children>
-            <Label text="Nombre*" />
-            <TextField fx:id="nombre" maxWidth="-Infinity" prefWidth="200.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2">
-         <children>
-            <Label text="Usuario*" />
-            <TextField fx:id="usuario" prefWidth="200.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="3">
-         <children>
-            <Label text="Contraseña*" />
-            <PasswordField fx:id="contraseña" prefWidth="200.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4">
-         <children>
-            <Label text="Correo electrónico*" />
-            <TextField fx:id="correo" maxWidth="-Infinity" prefWidth="250.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="5">
-         <children>
-            <Label text="Foto de perfil" />
-            <Button fx:id="selecciona" mnemonicParsing="false" text="Selecciona" />
-         </children>
-      </HBox>
+      </VBox>
    </children>
-</GridPane>
+</HBox>
