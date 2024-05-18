@@ -5,12 +5,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 /* 
 Cambio de clases: le das con .class, ejemplo .button - por defecto los botones estarán en lightgreen
 */
-.button {-fx-background-color: lightgreen;} 
-
+.button {-fx-background-color: lightgreen;}
+.button {-fx-cursor: HAND;}
 /*
 .alert {-fx-background-color: darkblue;}*/
 
 /* Cambio por id: los que no estén cambiados en el sceenbuilder específicamente, se cambian con #nombre */
 #button3 {-fx-background-color: orange} /*no se cambia porque está editado en en scenebuilder que tiene prioridad*/
+
+#volver           /*Todos los botones que se llamen 'volver' seran así*/
+        {-fx-background-color: red;
+        -fx-text-fill: white;
+        -fx-font-size: 12;
+        -fx-font-weight: bold;
+        } 
 
 
