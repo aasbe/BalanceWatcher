@@ -27,9 +27,9 @@ import javafx.stage.Stage;
 public class AutenticacionController implements Initializable {
 
     @FXML
-    private Button atras;
+    private Button volverB;
     @FXML
-    private Button acceder;
+    private Button accederB;
     
     private Stage stage;
     private Scene scene;
@@ -48,7 +48,7 @@ public class AutenticacionController implements Initializable {
     public void acceder(javafx.event.ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("PRINCIPAL.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        scene = new Scene(root);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Principal");
         stage.show();
@@ -57,7 +57,7 @@ public class AutenticacionController implements Initializable {
     public void volver(javafx.event.ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        scene = new Scene(root);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
         stage.show();
