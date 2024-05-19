@@ -75,7 +75,7 @@ public class AvataresController implements Initializable {
     
     @FXML
     public void volver(javafx.event.ActionEvent event) throws IOException {
-        root =  FXMLLoader.load(getClass().getResource("Inicio.fxml"));
+        root =  FXMLLoader.load(getClass().getResource("REGISTRO.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
