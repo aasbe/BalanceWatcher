@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #8FBC8F;" stylesheets="@PROYECTOIPC/BalanceWatcher/src/javafxmlapplication/intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.AvataresController">
+   <children>
+      <TilePane hgap="10.0" layoutX="110.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="247.0" prefRows="3" prefWidth="289.0" vgap="10.0">
+         <children>
+            <ImageView fx:id="persona" fitHeight="70.0" fitWidth="82.0" onMouseClicked="#persona" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/default.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="abeja" fitHeight="73.0" fitWidth="65.0" onMouseClicked="#abeja" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐝%20Honeybee%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="delfin" fitHeight="73.0" fitWidth="53.0" onMouseClicked="#delfin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐬%20Dolphin%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="vaca" fitHeight="73.0" fitWidth="49.0" onMouseClicked="#vaca" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐮%20Cow%20Face%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="cerdo" fitHeight="80.0" fitWidth="47.0" onMouseClicked="#cerdo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐷%20Pig%20Face%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ardilla" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#ardilla" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐿️%20Chipmunk%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="zorro" fitHeight="78.0" fitWidth="57.0" onMouseClicked="#zorro" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🦊%20Fox%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="panda" fitHeight="76.0" fitWidth="54.0" onMouseClicked="#panda" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🐼%20Panda%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="pato" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#pato" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/🪿%20Goose%20Emoji.jpeg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" top="40.0" />
+         </padding>
+      </TilePane>
+      <ImageView fx:id="elegido" fitHeight="215.0" fitWidth="300.0" layoutX="452.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../avatares/default.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" layoutY="300.0" prefHeight="100.0" prefWidth="800.0" spacing="500.0">
+         <children>
+            <Button fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Volver" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="seleccionar" mnemonicParsing="false" onAction="#seleccionar" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #64bcff;" text="Seleccionar perfil" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

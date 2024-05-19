@@ -58,7 +58,7 @@ public class REGISTROController implements Initializable {
     }    
     
     @FXML
-    public void siguiente(ActionEvent event)throws IOException{
+    public void registrarse(ActionEvent event)throws IOException{
         
             String Nombre = nombre.getText();
             String Correo = correo.getText();
@@ -73,15 +73,14 @@ public class REGISTROController implements Initializable {
             error.showAndWait();
         }
         else{
-            
-            if(Usuario.contains(" ")){
+           /* if(usuario.contains("a")){
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error");
                 error.setHeaderText("El usuario no ha de tener espacios");
                 error.showAndWait();
                 usuario.clear();
-            }
-            else if(Contraseña.length()<7){
+            } */
+            if(Contraseña.length()<7){
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error");
                 error.setHeaderText("La contraseña ha de tener mínimo 6 carácteres");
@@ -91,7 +90,18 @@ public class REGISTROController implements Initializable {
            
         }
     }
-
+    @FXML
+    public void SeleccionarAvatar (javafx.event.ActionEvent event) throws IOException {
+        root =  FXMLLoader.load(getClass().getResource("Avatares.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        stage.setResizable(false);
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Foto de perfil");
+        stage.show();
+    } 
+    
+     
     @FXML
     public void volver(javafx.event.ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("Inicio.fxml"));

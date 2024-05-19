@@ -5,8 +5,6 @@
 
 .root{
     
-    -fx-background-image: url('logoproject.jpg');
-    -fx-background-color:  #8FBC8F;
+    -fx-background-image: url('fondoDinero.jpeg');
     -fx-background-size: cover;
 }
-

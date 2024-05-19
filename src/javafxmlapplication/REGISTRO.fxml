@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -12,10 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.REGISTROController">
    <children>
-      <VBox alignment="CENTER" prefHeight="401.0" prefWidth="463.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="400.0" prefWidth="465.0" HBox.hgrow="ALWAYS">
          <children>
             <Label text="Crear una cuenta..." textFill="DARKSEAGREEN">
                <font>
@@ -36,13 +36,13 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Usuario*" />
-                        <TextField fx:id="usuario" prefWidth="200.0" />
+                        <TextField fx:id="usuario" prefWidth="200.0" promptText="sin espacios" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Contraseña*" />
-                        <PasswordField fx:id="contraseña" prefWidth="200.0" />
+                        <PasswordField fx:id="contraseña" prefWidth="200.0" promptText="mínimo 6 carácteres" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
@@ -54,7 +54,10 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Foto de perfil" />
-                        <Button fx:id="selecciona" mnemonicParsing="false" text="Selecciona" />
+                        <Button fx:id="selecciona" mnemonicParsing="false" onAction="#SeleccionarAvatar" text="Selecciona">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                         <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="* estos campos son obligatorios" />
                      </children>
                   </HBox>
@@ -63,17 +66,23 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </VBox>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="539.0" spacing="300.0">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="539.0" spacing="250.0">
                <children>
-                  <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: FF0000;" text="Atrás" textFill="WHITE">
+                  <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Volver" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="siguiente" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Siguiente" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
                <VBox.margin>
