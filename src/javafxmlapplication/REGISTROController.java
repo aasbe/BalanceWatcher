@@ -22,6 +22,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Acount;
 import model.AcountDAOException;
@@ -47,14 +48,21 @@ public class REGISTROController implements Initializable {
     private Button atras;
     @FXML
     private Button selecciona;
+    @FXML
+    private ImageView avatar; /*Para que se vea que funciona seleccionar la 
+    imagen, lo podemos quitar
+    */
     
-    Image image = new Image ("logoproject.jpg"); /*HACER AÑADIR IMAGEN*/
+    @FXML
+    Image image = new Image ("logoproject.jpg");
+    
     
     private boolean newuser = false;
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    
     /**
      * Initializes the controller class.
      * @param url
@@ -96,7 +104,7 @@ public class REGISTROController implements Initializable {
             if(Contraseña.length()<7){
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error");
-                error.setHeaderText("La contraseña ha de tener mínimo 6 carácteres");
+                error.setHeaderText("La contraseña ha de tener mínimo 7 carácteres");
                 error.showAndWait();
                 contraseña.clear();
             }
@@ -134,13 +142,22 @@ public class REGISTROController implements Initializable {
     
     @FXML
     public void SeleccionarAvatar (javafx.event.ActionEvent event) throws IOException {
-        root =  FXMLLoader.load(getClass().getResource("Avatares.fxml"));
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Avatares.fxml"));
+        root =  loader.load();
         stage = new Stage();/*(Stage) ((Node)event.getSource()).getScene().getWindow(); En pop-up*/
+        /*PARA PASAR OBJETOS ENTRE CONTROLLERS*/
+        AvataresController avatarescontroller = loader.getController();
+        avatarescontroller.introducirImagen(image);
+        
         stage.setResizable(false);
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Foto de perfil");
-        stage.show();
+        stage.showAndWait(); /*CLAVE EL SHOWANDWAIT*/
+        if (avatarescontroller.isISelected()) {
+            image= avatarescontroller.getImage();
+            avatar.setImage(image);}
     } 
     
      

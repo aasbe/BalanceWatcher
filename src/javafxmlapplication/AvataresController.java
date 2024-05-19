@@ -32,7 +32,7 @@ public class AvataresController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     } 
-
+    
     @FXML
     private Button seleccionar;
     @FXML
@@ -57,6 +57,8 @@ public class AvataresController implements Initializable {
     private ImageView pato;
     @FXML
     private ImageView elegido;
+    @FXML
+    private boolean seleccionada = false;
     
     private Stage stage;
     private Scene scene;
@@ -71,8 +73,12 @@ public class AvataresController implements Initializable {
      
     @FXML
     private void seleccionar(ActionEvent event) {
+        seleccionada = true;
+        ((Button)event.getSource()).getScene().getWindow().hide();
     }
-    
+    public boolean isISelected( ){
+        return seleccionada;
+    }
     @FXML
     public void volver(javafx.event.ActionEvent event) throws IOException {
         Stage myStage= (Stage) this.volver.getScene().getWindow();
@@ -81,7 +87,7 @@ public class AvataresController implements Initializable {
     
 
     
-    public javafx.scene.image.Image getImagen(){
+    public javafx.scene.image.Image getImage(){
         return elegido.getImage();
     }
     

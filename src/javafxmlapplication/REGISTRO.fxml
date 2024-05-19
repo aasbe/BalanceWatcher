@@ -42,7 +42,7 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Contraseña*" />
-                        <PasswordField fx:id="contraseña" prefWidth="200.0" promptText="mínimo 6 carácteres" styleClass="texto" stylesheets="@registro.css" />
+                        <PasswordField fx:id="contraseña" prefWidth="200.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
@@ -96,6 +96,11 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="401.0" prefWidth="269.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">
          <children>
+            <ImageView fx:id="avatar" fitHeight="91.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logoproject.jpg" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../LogoOficial.png" />

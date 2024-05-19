@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #8FBC8F;" stylesheets="@PROYECTOIPC/BalanceWatcher/src/javafxmlapplication/intentofondo.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.AvataresController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #8FBC8F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.AvataresController">
    <children>
       <TilePane hgap="10.0" layoutX="110.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="247.0" prefRows="3" prefWidth="289.0" vgap="10.0">
          <children>
