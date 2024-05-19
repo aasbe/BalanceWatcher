@@ -4,14 +4,17 @@
  */
 package javafxmlapplication;
 
-import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,29 +24,56 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author caral
+ * @author Usuario
  */
-
-
 public class PRINCIPALController implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    
+    @FXML
+    private Pane salir;
+    @FXML
+    private Button inicio;
+    @FXML
+    private Button perfil;
+    @FXML
+    private Button categorias;
+    @FXML
+    private Button gastos;
 
     /**
      * Initializes the controller class.
      */
-    private Stage stage;
-    private Scene scene;
-    private Parent root;    
-    
-    @FXML
-    private Button add;
-    private Button atras; 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-     @FXML
-    public void add(ActionEvent event) throws IOException {
+
+    @FXML
+    private void botonSalir(MouseEvent event) {
+    }
+
+    @FXML
+    private void botoninicio(ActionEvent event) {
+    }
+
+    @FXML
+    private void botonPerfil(ActionEvent event) {
+    }
+
+    @FXML
+    private void botonCategorias(ActionEvent event) {
+    }
+
+    @FXML
+    private void botonGastos(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void addGasto(ActionEvent event) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("Gasto.fxml")); //Para hacerlo ventana pop-up:
         stage = new Stage(); /*CREAS UNA NUEVA (Stage) ((Node)event.getSource()).getScene().getWindow(); vs Cambias de escena*/
         scene = new Scene(root);
@@ -62,4 +92,5 @@ public class PRINCIPALController implements Initializable {
         stage.setTitle("BalanceWatcher");
         stage.show();
     } 
+    
 }

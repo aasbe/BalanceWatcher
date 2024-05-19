@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 
 /**
@@ -60,10 +61,9 @@ public class AvataresController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    /*AÑADIR IMAGEN DE OTRO ARCHIVO*/
     
    
-    
-    
 
     /**
      * Initializes the controller class.
@@ -75,12 +75,8 @@ public class AvataresController implements Initializable {
     
     @FXML
     public void volver(javafx.event.ActionEvent event) throws IOException {
-        root =  FXMLLoader.load(getClass().getResource("REGISTRO.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
-        Scene scene = new Scene(root,800,400);
-        stage.setScene(scene);
-        stage.setTitle("BalanceWatcher");
-        stage.show();
+        Stage myStage= (Stage) this.volver.getScene().getWindow();
+        myStage.close();
     } 
     
 

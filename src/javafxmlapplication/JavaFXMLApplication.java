@@ -37,7 +37,7 @@ public class JavaFXMLApplication extends Application {
         //.css
         String css = this.getClass().getResource("estiloBotones.css").toExternalForm();
         scene.getStylesheets().add(css);
-        stage.setResizable(false);
+        /*stage.setResizable(false); Para poderla ampliar*/
         // 3- asiganación de la escena al Stage que recibe el metodo 
         //     - configuracion del stage
         //     - se muestra el stage de manera no modal mediante el metodo show()
