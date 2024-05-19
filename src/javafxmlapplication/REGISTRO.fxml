@@ -58,7 +58,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="* estos campos son obligatorios" />
+                        <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="campos obligatorios con *" />
                      </children>
                   </HBox>
                </children>
