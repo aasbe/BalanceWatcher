@@ -96,7 +96,7 @@ public class REGISTROController implements Initializable {
             if(Contraseña.length()<7){
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error");
-                error.setHeaderText("La contraseña ha de tener mínimo 7 carácteres");
+                error.setHeaderText("La contraseña ha de tener mínimo 6 carácteres");
                 error.showAndWait();
                 contraseña.clear();
             }
