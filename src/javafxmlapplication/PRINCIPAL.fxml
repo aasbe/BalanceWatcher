@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.PRINCIPALController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.PRINCIPALController">
    <children>
       <VBox prefHeight="400.0" prefWidth="162.0" style="-fx-background-color: #8FBC8F;">
          <children>
@@ -29,7 +29,7 @@
             <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" text="INICIO" />
-                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addGasto" prefHeight="40.0" text="GASTOS" />
+                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAddCategoria" prefHeight="40.0" text="GASTOS" />
                   <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="CATEGORIAS" />
                   <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="PERFIL" />
                   <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
@@ -47,7 +47,7 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="400.0" prefWidth="641.0" spacing="30.0" HBox.hgrow="ALWAYS">
+      <VBox prefHeight="551.0" prefWidth="578.0" spacing="30.0" HBox.hgrow="ALWAYS">
          <children>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0">
                <children>
@@ -62,7 +62,7 @@
                   <Insets />
                </VBox.margin>
             </TextField>
-            <GridPane prefHeight="173.0" prefWidth="579.0" VBox.vgrow="ALWAYS">
+            <GridPane prefHeight="123.0" prefWidth="464.0" VBox.vgrow="ALWAYS">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -125,14 +125,14 @@
                <children>
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gastos del último mes" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Button" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Gasto" />
+                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#irAddCategoria" text="Button" />
                      </children>
                   </VBox>
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gastos del último año" />
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Button" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Categoría" />
+                        <Button fx:id="addCat" mnemonicParsing="false" onAction="#irAddCategoria" text="Button" />
                      </children>
                   </VBox>
                </children>

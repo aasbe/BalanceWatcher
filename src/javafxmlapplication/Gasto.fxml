@@ -8,9 +8,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@estiloBotones.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.GastoController">
    <children>
-      <HBox layoutX="48.0" layoutY="208.0" prefHeight="127.0" prefWidth="303.0">
+      <HBox layoutX="48.0" layoutY="94.0" prefHeight="58.0" prefWidth="303.0">
          <children>
             <Label text="Nombre Categoría" />
+            <TextField fx:id="categoria" prefHeight="26.0" prefWidth="203.0" />
          </children></HBox>
       <HBox layoutX="335.0" layoutY="208.0" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -19,6 +20,5 @@
       </HBox>
       <Button fx:id="cancelar" cancelButton="true" layoutX="48.0" layoutY="353.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
       <Button fx:id="aceptar" defaultButton="true" layoutX="513.0" layoutY="353.0" mnemonicParsing="false" onAction="#addCategoria" prefHeight="26.0" prefWidth="68.0" text="Aceptar" />
-      <TextField fx:id="categoria" layoutX="114.0" layoutY="158.0" />
    </children>
 </AnchorPane>

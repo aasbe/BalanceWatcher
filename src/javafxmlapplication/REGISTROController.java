@@ -136,7 +136,8 @@ public class REGISTROController implements Initializable {
                 errorUs.setHeaderText("Nombre de usuario ya registrado");
                 errorUs.showAndWait();
                 usuario.clear();
-          System.out.println("Usuario ya registrado");}   
+         /* System.out.println("Usuario ya registrado");*/
+      }   
     }
 
     

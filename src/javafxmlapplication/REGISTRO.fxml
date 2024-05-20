@@ -51,22 +51,22 @@
                         <TextField fx:id="correo" maxWidth="-Infinity" prefWidth="250.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="465.0" spacing="30.0">
                      <children>
                         <Label text="Foto de perfil" />
                         <Button fx:id="selecciona" mnemonicParsing="false" onAction="#SeleccionarAvatar" text="Selecciona">
                            <cursor>
                               <Cursor fx:constant="HAND" />
-                           </cursor></Button>
-                        <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="campos obligatorios con *" />
+                           </cursor>
+                        </Button>
                      </children>
                   </HBox>
                </children>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets left="30.0" top="20.0" />
                </VBox.margin>
             </VBox>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="539.0" spacing="250.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="539.0" spacing="40.0">
                <children>
                   <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Volver" textFill="WHITE">
                      <font>
@@ -76,6 +76,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="campos obligatorios con *" />
                   <Button fx:id="siguiente" mnemonicParsing="false" onAction="#newuser" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Siguiente" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -96,14 +97,14 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="401.0" prefWidth="269.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">
          <children>
-            <ImageView fx:id="avatar" fitHeight="91.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logoproject.jpg" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../LogoOficial.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="avatar" fitHeight="60.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatares/default.png" />
                </image>
             </ImageView>
          </children>

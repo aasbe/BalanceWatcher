@@ -18,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -33,15 +34,17 @@ public class PRINCIPALController implements Initializable {
     private Parent root;
     
     @FXML
-    private Pane salir;
-    @FXML
     private Button inicio;
     @FXML
-    private Button perfil;
-    @FXML
-    private Button categorias;
-    @FXML
     private Button gastos;
+    @FXML
+    private Button addGas;
+    @FXML
+    private Button addCat;
+    @FXML
+    private Button gasto;
+    @FXML
+    private VBox categoría;
 
     /**
      * Initializes the controller class.
@@ -51,26 +54,6 @@ public class PRINCIPALController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void botonSalir(MouseEvent event) {
-    }
-
-    @FXML
-    private void botoninicio(ActionEvent event) {
-    }
-
-    @FXML
-    private void botonPerfil(ActionEvent event) {
-    }
-
-    @FXML
-    private void botonCategorias(ActionEvent event) {
-    }
-
-    @FXML
-    private void botonGastos(ActionEvent event) {
-        
-    }
     
     @FXML
     public void addGasto(ActionEvent event) throws IOException {
@@ -92,5 +75,19 @@ public class PRINCIPALController implements Initializable {
         stage.setTitle("BalanceWatcher");
         stage.show();
     } 
+
+
+    @FXML
+    private void irAddCategoria(ActionEvent event) throws IOException{
+        root =  FXMLLoader.load(getClass().getResource("Gasto.fxml")); //Para hacerlo ventana pop-up:
+        stage = new Stage(); /*CREAS UNA NUEVA (Stage) ((Node)event.getSource()).getScene().getWindow(); vs Cambias de escena*/
+        scene = new Scene(root);
+        stage.setScene(scene);
+        /*stage.initModality(Modality.APPLICATION_MODAL); Para ventana bloqueante*/
+        stage.setTitle("Añadir categoría");
+        stage.show();
+    }
+
+    
     
 }

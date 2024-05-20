@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -31,18 +32,33 @@ public class GastoController {
     private Button cancelar;
     @FXML
     private Button aceptar;
-     @FXML
+    @FXML
     private TextField categoria;
     @FXML
     private TextField descripcion;
    
     /* Para usar los métodos: Acount.getInstance().*metodoquequieras()*; */
-    /*No funciona, para hacer el cargo hay que hacer antes el user y la categoria, pero ahí vamos */
+    
     @FXML
-    public void addCategoria(ActionEvent event) throws IOException, AcountDAOException {
-    boolean cat = Acount.getInstance().registerCategory("Categoria Base", descripcion.getText());
-    System.out.println(Acount.getInstance().getUserCategories());
+    public void addCategoria(ActionEvent event) throws IOException  {
+    
+        try{
+    boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
+    /*System.out.println(Acount.getInstance().getUserCategories());*/
+    if (cat) {
+        ((Button)event.getSource()).getScene().getWindow().hide();
     }
+        }
+        
+        catch (AcountDAOException error) {
+        Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("Nombre de categoría ya registrada");
+                errorUs.showAndWait();
+                categoria.clear();
+          }     
+        }
+    
     
     /*@FXML
     public void addCharge(ActionEvent event) throws IOException {
