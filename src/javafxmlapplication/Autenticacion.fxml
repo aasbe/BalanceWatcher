@@ -24,9 +24,9 @@
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                <children>
                   <Label text="Usuario*" />
-                  <TextField maxWidth="-Infinity" prefWidth="200.0" />
+                  <TextField fx:id="usuario" maxWidth="-Infinity" prefWidth="200.0" />
                   <Label text="Contraseña*" />
-                  <PasswordField maxWidth="-Infinity" prefWidth="200.0" />
+                  <PasswordField fx:id="password" maxWidth="-Infinity" prefWidth="200.0" />
                </children>
                <opaqueInsets>
                   <Insets />
