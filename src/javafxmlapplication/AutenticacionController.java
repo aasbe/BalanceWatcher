@@ -32,7 +32,7 @@ import model.AcountDAOException;
 public class AutenticacionController implements Initializable {
 
     @FXML
-    private Button volverB;
+    private Button volver;
     @FXML
     private Button accederB;
     @FXML

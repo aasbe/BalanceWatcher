@@ -28,11 +28,11 @@
             </HBox>
             <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
                <children>
-                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" text="INICIO" />
+                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="INICIO" />
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAddCategoria" prefHeight="40.0" text="GASTOS" />
                   <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="CATEGORIAS" />
-                  <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="PERFIL" />
-                  <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" text="PERFIL" />
+                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -126,7 +126,7 @@
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Gasto" />
-                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#irAddCategoria" text="Button" />
+                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" text="Button" />
                      </children>
                   </VBox>
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
