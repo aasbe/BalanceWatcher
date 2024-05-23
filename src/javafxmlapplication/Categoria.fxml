@@ -49,7 +49,7 @@
             </Separator>
             <HBox prefHeight="18.0" prefWidth="346.0">
                <children>
-                      <Label text="Descripción*" />
+                      <Label text="Descripción" />
                </children>
                <VBox.margin>
                   <Insets left="168.0" />

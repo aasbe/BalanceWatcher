@@ -37,6 +37,8 @@ public class REGISTROController implements Initializable {
     @FXML
     private TextField nombre;
     @FXML
+    private TextField apellido;
+    @FXML
     private TextField correo;
     @FXML
     private TextField usuario;
@@ -56,8 +58,14 @@ public class REGISTROController implements Initializable {
     @FXML
     Image image = new Image ("logoproject.jpg");
     
-    
+    private boolean isDisabled;
     private boolean newuser = false;
+    String Nombre;
+    String Apellido;
+    String Correo;
+    String Usuario;
+    String Contraseña;
+    
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -70,23 +78,25 @@ public class REGISTROController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+    siguiente.setDisable(true);   
     }    
     
     @FXML
     public void newuser(javafx.event.ActionEvent event) throws IOException {
         
-        String Nombre = nombre.getText();
-        String Correo = correo.getText();
-        String Usuario = usuario.getText(); /*ÚNICO: Avisar al usuario?*/
-        String Contraseña = contraseña.getText();
+        Nombre = nombre.getText();
+        Apellido = apellido.getText();
+        Correo = correo.getText();
+        Usuario = usuario.getText(); /*ÚNICO: Avisar al usuario?*/
+        Contraseña = contraseña.getText();
+        isDisabled = (Nombre.isEmpty()||Correo.isEmpty()||Usuario.isEmpty()||Contraseña.isEmpty()||Apellido.isEmpty());
+        siguiente.setDisable(isDisabled);
         
         try{
         /*CONDICIONES, 3 mensajes de error*/
-        if (Nombre.isEmpty()||Correo.isEmpty()||Usuario.isEmpty()||Contraseña.isEmpty()||
-                Usuario.contains(" ")||Contraseña.length()<7){
+        if (isDisabled ||Usuario.contains(" ")||Contraseña.length()<7){
             
-            if (Nombre.isEmpty()||Correo.isEmpty()||Usuario.isEmpty()||Contraseña.isEmpty()) {
+            if (isDisabled) {
             Alert error = new Alert (AlertType.ERROR);
             error.setTitle("Error");
             error.setHeaderText("No ha rellenado todos los campos obligatorios * ");
@@ -99,6 +109,7 @@ public class REGISTROController implements Initializable {
                 error.setHeaderText("El usuario no ha de tener espacios");
                 error.showAndWait();
                 usuario.clear();
+                siguiente.setDisable(true);
             }
             
             if(Contraseña.length()<7){
@@ -107,6 +118,7 @@ public class REGISTROController implements Initializable {
                 error.setHeaderText("La contraseña ha de tener mínimo 7 carácteres");
                 error.showAndWait();
                 contraseña.clear();
+                siguiente.setDisable(true);
             }
         }
          
@@ -115,7 +127,7 @@ public class REGISTROController implements Initializable {
             LocalDate fecha = LocalDate.now();
             
         newuser = Acount.getInstance().registerUser(Nombre,
-            "APELLIDO",Correo,Usuario,Contraseña, image,fecha);
+            Apellido,Correo,Usuario,Contraseña, image,fecha);
     System.out.println(Usuario+" registrado!"); 
     
     /* -> METER VENTANA y autenticar */
@@ -160,7 +172,17 @@ public class REGISTROController implements Initializable {
             image= avatarescontroller.getImage();
             avatar.setImage(image);}
     } 
-    
+    @FXML
+    public void keyReleasedProperty() {  /*Si lo ponemos en en los textfields, lo checkea cada vez que sueltas una tecla, así no hace falta
+                                        el listener */
+        Nombre = nombre.getText();
+        Apellido = apellido.getText();
+        Correo = correo.getText();
+        Usuario = usuario.getText(); /*ÚNICO: Avisar al usuario?*/
+        Contraseña = contraseña.getText();
+        isDisabled = (Nombre.isEmpty()||Correo.isEmpty()||Usuario.isEmpty()||Contraseña.isEmpty()||Apellido.isEmpty());
+        siguiente.setDisable(isDisabled);
+    }
      
     @FXML
     public void volver(javafx.event.ActionEvent event) throws IOException {

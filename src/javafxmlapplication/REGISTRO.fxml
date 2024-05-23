@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,9 +16,9 @@
 
 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.REGISTROController">
    <children>
-      <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="400.0" prefWidth="465.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="386.0" prefWidth="466.0" HBox.hgrow="ALWAYS">
          <children>
-            <Label text="Crear una cuenta..." textFill="DARKSEAGREEN">
+            <Label prefWidth="305.0" text="Crear una cuenta..." textFill="DARKSEAGREEN">
                <font>
                   <Font name="Bernard MT Condensed" size="40.0" />
                </font>
@@ -25,30 +26,41 @@
                   <Insets left="40.0" />
                </VBox.margin>
             </Label>
-            <VBox alignment="CENTER" prefHeight="324.0" prefWidth="539.0">
+            <VBox alignment="CENTER" prefHeight="324.0" prefWidth="420.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Nombre*" />
-                        <TextField fx:id="nombre" maxWidth="-Infinity" prefWidth="200.0" />
+                        <TextField fx:id="nombre" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" />
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Label text="Apellido*" />
+                        <TextField fx:id="apellido" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <Separator opacity="0.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Separator>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Usuario*" />
-                        <TextField fx:id="usuario" prefWidth="200.0" promptText="sin espacios" styleClass="texto" stylesheets="@registro.css" />
+                        <TextField fx:id="usuario" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" promptText="sin espacios" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label text="Contraseña*" />
-                        <PasswordField fx:id="contraseña" prefWidth="200.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
+                        <PasswordField fx:id="contraseña" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Correo electrónico*" />
-                        <TextField fx:id="correo" maxWidth="-Infinity" prefWidth="250.0" />
+                        <TextField fx:id="correo" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="250.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="465.0" spacing="30.0">
@@ -92,7 +104,7 @@
             </HBox>
          </children>
          <HBox.margin>
-            <Insets top="20.0" />
+            <Insets top="10.0" />
          </HBox.margin>
       </VBox>
       <VBox alignment="CENTER" prefHeight="401.0" prefWidth="269.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">

@@ -41,12 +41,21 @@ public class CategoriaController {
     
     @FXML
     public void addCategoria(ActionEvent event) throws IOException  {
-    
+        String Categoria = categoria.getText();
         try{
+        
+            if (Categoria.isEmpty()) {
+            Alert error = new Alert (Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setHeaderText("El campo 'Categoría' no puede estar vacío");
+            error.showAndWait();
+            }
+            else {
     boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
-    /*System.out.println(Acount.getInstance().getUserCategories());*/
+    System.out.println(Acount.getInstance().getUserCategories());
     if (cat) {
         ((Button)event.getSource()).getScene().getWindow().hide();
+    }
     }
         }
         
