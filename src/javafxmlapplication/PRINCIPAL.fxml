@@ -30,7 +30,7 @@
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="INICIO" />
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAddCategoria" prefHeight="40.0" text="GASTOS" />
-                  <Button maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="CATEGORIAS" />
+                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" text="CATEGORIAS" />
                   <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" text="PERFIL" />
                   <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
