@@ -135,7 +135,7 @@ public class REGISTROController implements Initializable {
     if (newuser == true){ 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Usuario nuevo registrado");
-        alert.setHeaderText("Se ha registrado correctamente el usuario "+ Usuario +". Pulse 'OK' para ir a la ventana de Autenticación.");
+        alert.setHeaderText("Se ha registrado correctamente el usuario "+ Usuario +". Pulse 'Aceptar' para ir a la ventana de Autenticación.");
        /* alert.setContentText("Se ha registrado el nuevo usuario "+ Usuario +". Pulse aceptar para ir a la ventana de Autenticación");*/
         if (alert.showAndWait().get() == ButtonType.OK) {
         irAutenticacion(event);}

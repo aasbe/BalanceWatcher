@@ -3,6 +3,8 @@ package javafxmlapplication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +12,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Acount;
+import model.AcountDAOException;
 
 public class PRINCIPALController implements Initializable {
 
@@ -33,29 +40,33 @@ public class PRINCIPALController implements Initializable {
     private Button perfil; // Botón para acceder al perfil
     @FXML
     private Button volver;
+    @FXML
+    private Label nick;
+    
+    String usuario;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        try {
+            usuario = Acount.getInstance().getLoggedUser().getNickName();
+        } catch (AcountDAOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        nick.setText(usuario);
     }
 
-    public void addGasto(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Añadir gasto");
-        stage.show();
-    }
-
+    
     @FXML
-    public void irPerfil(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Perfil.fxml"));
+    public void irVerGastos(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("VerGastos.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
-        stage.setTitle("PRINCIPAL - Perfil");
+        stage.setTitle("Gastos");
         stage.show();
     }
     
@@ -65,21 +76,45 @@ public class PRINCIPALController implements Initializable {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
-        stage.setTitle("PRINCIPAL - Categorías");
+        stage.setTitle("Categorías");
         stage.show();
     }
     
-
+        @FXML
+    public void irPerfil(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Perfil.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Perfil");
+        stage.show();
+    }
+    
     @FXML
     public void volver(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+        /*confirmación de cerrar sesión*/
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
+        alert.setHeaderText("CERRANDO SESIÓN");
+        alert.setContentText("¿Seguro que desea cerrar la sesión?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+        root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("BalanceWatcher");
-        stage.show();
+        stage.show();}
     }
 
+    
+    public void addGasto(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
+        stage = new Stage();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Añadir gasto");
+        stage.show();
+    }
+    
     @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));

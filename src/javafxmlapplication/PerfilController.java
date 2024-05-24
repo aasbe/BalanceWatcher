@@ -131,8 +131,37 @@ public class PerfilController implements Initializable {
         } catch (AcountDAOException ex) {    
             
         }
-    }     
-        
+    }  
+    
+    @FXML
+    public void irPrincipal(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("PRINCIPAL.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Principal");
+        stage.show();
+    }
+ 
+    @FXML
+    public void irVerGastos(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("VerGastos.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Gastos");
+        stage.show();
+    }
+    
+    @FXML
+    public void irVerCategorias(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("PRINCIPAL - Categorías");
+        stage.show();
+    }    
          
      
 

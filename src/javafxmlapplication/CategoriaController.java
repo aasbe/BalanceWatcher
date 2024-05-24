@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -68,6 +69,25 @@ public class CategoriaController {
           }     
         }
     
+    @FXML
+    public void irVerCategorias(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("PRINCIPAL - Categorías");
+        stage.show();
+    }
+    
+    @FXML
+    public void irPerfil(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Perfil.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("PRINCIPAL - Perfil");
+        stage.show();
+    }
     
     @FXML
     public void cancel(ActionEvent event) throws IOException {

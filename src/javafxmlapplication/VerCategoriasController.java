@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Acount;
@@ -39,6 +40,8 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private Button verCat;
     @FXML
+    private Label nick;
+    @FXML
     private Button perfil; // Botón para acceder al perfil
     @FXML
     private Button volver;
@@ -47,6 +50,8 @@ public class VerCategoriasController implements Initializable {
     
     private ObservableList<Category> todasCategorias;
     private List <Category> todasCat;
+    
+    String usuario;
 
 
     @Override
@@ -66,16 +71,16 @@ public class VerCategoriasController implements Initializable {
         }
             listaCategorias.setItems(todasCategorias);
 */
+        try {
+            usuario = Acount.getInstance().getLoggedUser().getNickName();
+        } catch (AcountDAOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        nick.setText(usuario);
     }
 
-    public void addGasto(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Añadir gasto");
-        stage.show();
-    }
 
     @FXML
     public void irPrincipal(ActionEvent event) throws IOException {
@@ -86,6 +91,16 @@ public class VerCategoriasController implements Initializable {
         stage.setTitle("Principal");
         stage.show();
     }
+ 
+    @FXML
+    public void irVerGastos(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("VerGastos.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Gastos");
+        stage.show();
+    }
     
     @FXML
     public void irPerfil(ActionEvent event) throws IOException {
@@ -93,7 +108,7 @@ public class VerCategoriasController implements Initializable {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
-        stage.setTitle("PRINCIPAL - Perfil");
+        stage.setTitle("Perfil");
         stage.show();
     }
     
@@ -117,5 +132,13 @@ public class VerCategoriasController implements Initializable {
         stage.setTitle("Añadir categoría");
         stage.show();
     }
-
+/*Podríamos quitarlo en estas, no?*/
+        public void addGasto(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
+        stage = new Stage();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Añadir gasto");
+        stage.show();
+    }
 }

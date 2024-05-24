@@ -24,9 +24,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Acount;
 import model.AcountDAOException;
 import model.Category;
@@ -61,7 +64,6 @@ public class GastoController implements Initializable{
     @FXML
     private Label descifrar;
     
-    int cantidadI =3;
     Category cat1;
    
     /* Para usar los métodos: Acount.getInstance().*metodoquequieras()*; */
@@ -84,7 +86,39 @@ public class GastoController implements Initializable{
         }
         
         categoria.getItems().addAll(todasCategorias);
-        categoria.setOnAction(this::descif);
+        
+        /*Para que se vean los nombres al DESPLEGAR el combobox*/
+        categoria.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
+            @Override
+            public ListCell<Category> call(ListView<Category> param) {
+                return new ListCell<Category>() {
+                    @Override
+                    protected void updateItem(Category item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                        };
+            }
+        });
+        
+        // Para que se vea el nombre de la selección*/
+        categoria.setButtonCell(new ListCell<Category>() {
+            @Override
+            protected void updateItem(Category item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item != null) {
+                    setText(item.getName());
+                } else {
+                    setText(null);
+                }
+            }
+        });
+        
+       /* categoria.setOnAction(this::descif);*/
     }   
     
     
@@ -134,13 +168,19 @@ public class GastoController implements Initializable{
     
     /*FXML public void subirFactura */
     
+ /*   NO HACE FALTA, ERAN PROBATURAS
+    
     @FXML
     public void descif (Event event) {
         
         cat1 = (Category) categoria.getValue();
         String nameCat = cat1.getName();
         descifrar.setText(nameCat);
-    }
+        Category selectedCategory = (Category) categoria.getSelectionModel().getSelectedItem();
+        if (selectedCategory != null) {
+            categoria.setPromptText(selectedCategory.getName());
+        }
+    }*/
     
     @FXML
     public void cancel(ActionEvent event) throws IOException {
@@ -151,3 +191,13 @@ public class GastoController implements Initializable{
         
     }
 }
+/*
+private void descif(javafx.event.ActionEvent event) {
+        // Implementa la lógica que debe ocurrir cuando se selecciona una categoría
+        Category selectedCategory = categoria.getSelectionModel().getSelectedItem();
+        if (selectedCategory != null) {
+            System.out.println("Selected category: " + selectedCategory.getName());
+        }
+
+
+*/
