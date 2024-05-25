@@ -75,7 +75,7 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" prefHeight="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #fb0000;" stylesheets="@estiloBotones.css" text="Salir" textFill="WHITE">
+            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Salir" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

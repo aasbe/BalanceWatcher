@@ -23,6 +23,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Acount;
 import model.AcountDAOException;
@@ -50,6 +52,8 @@ public class PerfilController implements Initializable {
     private Label fechat;
     @FXML
     private Button cerrarS;
+    @FXML
+    private ImageView avatar;        
     
     String nnombre;
     String ncorreo;
@@ -61,6 +65,7 @@ public class PerfilController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Image imagenPerfil;
     
     /**
      * Initializes the controller class.
@@ -74,6 +79,8 @@ public class PerfilController implements Initializable {
             ncontraseña = Acount.getInstance().getLoggedUser().getPassword();
             ncorreo = Acount.getInstance().getLoggedUser().getEmail();
             fecha = Acount.getInstance().getLoggedUser().getRegisterDate();
+            imagenPerfil = Acount.getInstance().getLoggedUser().getImage();
+            
             
         } catch (AcountDAOException ex) {
             Logger.getLogger(PerfilController.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,6 +94,7 @@ public class PerfilController implements Initializable {
         correo.setText(ncorreo);
         contraseña.setText(ncontraseña);
         fechat.setText(fecha.toString());
+        avatar.setImage(imagenPerfil);
     }
     
     @FXML

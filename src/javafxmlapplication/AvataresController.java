@@ -63,7 +63,7 @@ public class AvataresController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    /*AÑADIR IMAGEN DE OTRO ARCHIVO*/
+    private String nuevoAvatar;
     
    
 
@@ -89,6 +89,10 @@ public class AvataresController implements Initializable {
     
     public javafx.scene.image.Image getImage(){
         return elegido.getImage();
+    }
+    
+    public String getNuevoAvatar() {
+        return nuevoAvatar;
     }
     
     public void introducirImagen(javafx.scene.image.Image i){

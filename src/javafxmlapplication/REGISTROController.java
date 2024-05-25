@@ -56,7 +56,7 @@ public class REGISTROController implements Initializable {
     */
     
     @FXML
-    Image image = new Image ("logoproject.jpg");
+    Image image = new Image ("default.png");
     
     private boolean isDisabled;
     private boolean newuser = false;

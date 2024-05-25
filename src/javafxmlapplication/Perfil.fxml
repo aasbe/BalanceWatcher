@@ -32,7 +32,7 @@
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS" />
                   <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS" />
                   <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL" />
-                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -44,7 +44,7 @@
             </VBox>
          </children>
       </VBox>
-        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" spacing="20.0" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="405.0" prefWidth="626.0" spacing="20.0" HBox.hgrow="ALWAYS">
             <children>
                 <Label text="Perfil de Usuario" textFill="DARKSEAGREEN">
                     <font>
@@ -102,7 +102,7 @@
                   </VBox>
                </children>
             </HBox>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="558.0" spacing="10.0">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="558.0" spacing="20.0">
                       <children>
                           <ImageView fx:id="avatar" fitHeight="80.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -120,18 +120,11 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
+                  <Button fx:id="cambiarAvatar" mnemonicParsing="false" stylesheets="@estiloBotones.css" text="Cambiar avatar" />
                       </children>
                   </HBox>
-                <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="300.0" spacing="200.0">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="300.0">
                     <children>
-                        <Button fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Volver" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
                         <Button fx:id="guardar" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarDatos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Guardar" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="14.0" />
