@@ -26,7 +26,7 @@ import javafx.scene.image.Image;
  
  */
 
-public class AvataresController implements Initializable {
+public class ActualizarAvatarController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

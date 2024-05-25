@@ -172,6 +172,7 @@ public class REGISTROController implements Initializable {
             image= avatarescontroller.getImage();
             avatar.setImage(image);}
     } 
+    
     @FXML
     public void keyReleasedProperty() {  /*Si lo ponemos en en los textfields, lo checkea cada vez que sueltas una tecla, así no hace falta
                                         el listener */

@@ -98,6 +98,26 @@ public class PerfilController implements Initializable {
     }
     
     @FXML
+    public void ActualizarAvatar (javafx.event.ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ActualizarAvatar.fxml"));
+        root =  loader.load();
+        stage = new Stage();/*(Stage) ((Node)event.getSource()).getScene().getWindow(); En pop-up*/
+        /*PARA PASAR OBJETOS ENTRE CONTROLLERS*/
+        ActualizarAvatarController actualizarAvatarcontroller = loader.getController();
+        actualizarAvatarcontroller.introducirImagen(imagenPerfil);
+        
+        stage.setResizable(false);
+        Scene scene = new Scene(root,800,400);
+        stage.setScene(scene);
+        stage.setTitle("Actualizar foto de perfil");
+        stage.showAndWait(); /*CLAVE EL SHOWANDWAIT*/
+        if (actualizarAvatarcontroller.isISelected()) {
+            imagenPerfil= actualizarAvatarcontroller.getImage();
+            avatar.setImage(imagenPerfil);}
+    }
+    
+    @FXML
     public void guardarDatos (ActionEvent event)throws IOException{
         nnombre = nombre.getText();
         napellido = apellido.getText();
@@ -134,7 +154,8 @@ public class PerfilController implements Initializable {
          Acount.getInstance().getLoggedUser().setName(nnombre);
          Acount.getInstance().getLoggedUser().setSurname(napellido);
          Acount.getInstance().getLoggedUser().setPassword(ncontraseña);
-         Acount.getInstance().getLoggedUser().setEmail(ncorreo);  
+         Acount.getInstance().getLoggedUser().setEmail(ncorreo); 
+         Acount.getInstance().getLoggedUser().setImage(imagenPerfil);
         volver(event);
         }
             }

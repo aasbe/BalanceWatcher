@@ -120,7 +120,7 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Button fx:id="cambiarAvatar" mnemonicParsing="false" stylesheets="@estiloBotones.css" text="Cambiar avatar" />
+                  <Button fx:id="cambiarAvatar" mnemonicParsing="false" onAction="#ActualizarAvatar" stylesheets="@estiloBotones.css" text="Cambiar avatar" />
                       </children>
                   </HBox>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="300.0">
