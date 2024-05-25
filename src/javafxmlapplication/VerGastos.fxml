@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -26,7 +27,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
+            <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO">
                      <font>
@@ -74,21 +75,36 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="551.0" prefWidth="578.0" spacing="25.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefWidth="578.0" spacing="20.0" HBox.hgrow="ALWAYS">
          <children>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="578.0">
+               <children>
+                  <Label text="Gastos" textFill="DARKSEAGREEN">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="40.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="5.0">
                <children>
-                  <Text fx:id="textobienvenida" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" />
+                  <Text fx:id="textobienvenida" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Text>
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0" />
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-               <padding>
-                  <Insets top="15.0" />
-               </padding>
             </HBox>
-            <TableView fx:id="visor" editable="true" prefHeight="238.0" prefWidth="578.0" tableMenuButtonVisible="true">
+            <TableView fx:id="visor" editable="true" prefHeight="238.0" prefWidth="578.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
                <columns>
                   <TableColumn fx:id="gasto" prefWidth="119.20001220703125" text="Gasto" />
                   <TableColumn fx:id="categoria" prefWidth="93.5999755859375" text="Categoría" />
@@ -98,9 +114,12 @@
             </TableView>
             <HBox alignment="CENTER" spacing="100.0">
                <children>
-                  <Button fx:id="actualizar" mnemonicParsing="false" text="Actualizar gasto" />
-                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarGasto" text="Eliminar gasto" />
+                  <Button fx:id="actualizar" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="Actualizar gasto" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#eliminarGasto" prefHeight="40.0" stylesheets="@estiloBotones.css" text="Eliminar gasto" />
                </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </HBox>
          </children>
          <HBox.margin>

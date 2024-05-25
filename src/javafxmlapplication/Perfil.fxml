@@ -9,7 +9,10 @@
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -26,7 +29,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
+            <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO" />
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS" />
@@ -44,65 +47,37 @@
             </VBox>
          </children>
       </VBox>
-        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="405.0" prefWidth="626.0" spacing="20.0" HBox.hgrow="ALWAYS">
-            <children>
-                <Label text="Perfil de Usuario" textFill="DARKSEAGREEN">
-                    <font>
-                        <Font name="Bernard MT Condensed" size="40.0" />
-                    </font>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <effect>
-                  <Glow />
-               </effect>
-                </Label>
-            <HBox spacing="10.0">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" />
-               </VBox.margin>
+      <GridPane alignment="CENTER" HBox.hgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.33331298828125" minWidth="10.0" prefWidth="54.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.00002670288086" minWidth="10.0" prefWidth="209.00002670288086" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.00002670288086" minWidth="10.0" prefWidth="54.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.66671752929688" minWidth="10.0" prefWidth="213.66671752929688" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="54.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="2.0" prefHeight="2.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="6">
                <children>
-                      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="240.0" spacing="5.0">
-                          <children>
-                              <Label fx:id="nombre2" alignment="CENTER" text="Nombre">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <TextField fx:id="nombre" prefHeight="26.0" prefWidth="322.0" />
-                              <Label text="Contraseña">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <PasswordField fx:id="contraseña" />
-                              <Label text="Correo electrónico">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <TextField fx:id="correo" prefHeight="26.0" prefWidth="322.0" />
-                          </children>
-                      </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="240.0" spacing="5.0">
-                     <children>
-                        <Label text="Apellido">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <TextField fx:id="apellido" prefHeight="26.0" prefWidth="322.0" />
-                              <Label text="Usuario">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <Label fx:id="nick" alignment="CENTER" prefHeight="25.33" prefWidth="82.0" />
-                        <Label text="Fecha de registro">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Label>
-                        <Label fx:id="fechat" prefHeight="25.33" prefWidth="82.0" />
-                     </children>
-                  </VBox>
+                      <Label text="Perfil de Usuario" textFill="DARKSEAGREEN">
+                          <font>
+                              <Font name="Bernard MT Condensed" size="40.0" />
+                          </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                      </Label>
                </children>
             </HBox>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="558.0" spacing="20.0">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="558.0" spacing="20.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
                       <children>
                           <ImageView fx:id="avatar" fitHeight="80.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -122,8 +97,11 @@
                   </ImageView>
                   <Button fx:id="cambiarAvatar" mnemonicParsing="false" onAction="#ActualizarAvatar" stylesheets="@estiloBotones.css" text="Cambiar avatar" />
                       </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
                   </HBox>
-                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="300.0">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="300.0" GridPane.columnSpan="5" GridPane.rowIndex="6">
                     <children>
                         <Button fx:id="guardar" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarDatos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Guardar" textFill="WHITE">
                             <font>
@@ -134,11 +112,83 @@
                             </cursor>
                         </Button>
                     </children>
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="10.0" />
-                    </VBox.margin>
                 </HBox>
-            </children>
-        </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnSpan="5" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="CENTER" prefWidth="240.0" spacing="10.0">
+                     <children>
+                              <Label fx:id="nombre2" alignment="CENTER" text="Nombre">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nombre" maxWidth="-Infinity" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefWidth="240.0" spacing="10.0">
+                     <children>
+                        <Label text="Apellido">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="apellido" maxWidth="-Infinity" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnSpan="5" GridPane.rowIndex="2">
+               <children>
+                  <VBox alignment="CENTER" prefWidth="240.0" spacing="10.0">
+                     <children>
+                              <Label text="Contraseña">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="contraseña" maxWidth="-Infinity" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefWidth="240.0" spacing="10.0">
+                     <children>
+                              <Label text="Usuario">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nick" alignment="CENTER" prefHeight="25.33" prefWidth="82.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnSpan="5" GridPane.rowIndex="3">
+               <children>
+                      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="240.0" spacing="10.0">
+                          <children>
+                              <Label text="Correo electrónico">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="correo" maxWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
+                          </children>
+                      </VBox>
+                  <VBox alignment="CENTER" prefWidth="240.0" spacing="10.0">
+                     <children>
+                        <Label text="Fecha de registro">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fechat" prefHeight="25.33" prefWidth="82.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </HBox.margin>
+      </GridPane>
     </children>
 </HBox>

@@ -22,7 +22,7 @@
             <Glow />
          </effect>
         </Label>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="739.0" spacing="5.0">
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="739.0" spacing="5.0" VBox.vgrow="ALWAYS">
             <children>
             <HBox>
                <children>

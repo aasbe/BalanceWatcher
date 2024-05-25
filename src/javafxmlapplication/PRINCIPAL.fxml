@@ -29,7 +29,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO" />
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS" />
@@ -54,7 +54,10 @@
          <children>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Text>
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="56.0" />
                </children>
                <VBox.margin>

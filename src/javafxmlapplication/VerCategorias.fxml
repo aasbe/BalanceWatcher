@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -26,7 +27,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
+            <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO">
                      <cursor>
@@ -89,13 +90,28 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="551.0" prefWidth="578.0" spacing="30.0" HBox.hgrow="ALWAYS">
+      <VBox prefHeight="551.0" prefWidth="578.0" spacing="20.0" HBox.hgrow="ALWAYS">
          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Categorías" textFill="DARKSEAGREEN">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="40.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" wrappingWidth="79.46990966796875">
                      <font>
-                        <Font name="System Bold Italic" size="15.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font></Text>
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0">
                      <font>
@@ -106,12 +122,15 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" />
+            <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
             <HBox alignment="CENTER" prefHeight="26.0" prefWidth="428.0" spacing="35.0">
                <children>
                   <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" stylesheets="@estiloBotones.css" text="Añadir Categoría" />
                   <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" stylesheets="@estiloBotones.css" text="Eliminar Categoría" />
                </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </HBox>
          </children>
          <HBox.margin>
