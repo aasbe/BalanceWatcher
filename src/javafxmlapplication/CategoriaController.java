@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -36,7 +37,7 @@ public class CategoriaController {
     @FXML
     private TextField categoria;
     @FXML
-    private TextField descripcion;
+    private TextArea descripcion;
     
    
     /* Para usar los métodos: Acount.getInstance().*metodoquequieras()*; */
@@ -45,9 +46,9 @@ public class CategoriaController {
     public void addCategoria(ActionEvent event) throws IOException  {
         String Categoria = categoria.getText();
        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCategorias.fxml"));
-        root = loader.load();
-        VerCategoriasController controllerVerCat = loader.getController();
+       /* FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCategorias.fxml"));
+        root2 = loader.load();
+        VerCategoriasController controllerVerCat = loader.getController();*/
         try{
         
             if (Categoria.isEmpty()) {
@@ -58,10 +59,17 @@ public class CategoriaController {
             }
             else {
     boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
-    System.out.println(Acount.getInstance().getUserCategories());
+   
     if (cat) {
-        controllerVerCat.actualizarCategorias();
-        ((Button)event.getSource()).getScene().getWindow().hide();
+        
+       /* controllerVerCat.actualizar = true;*/
+        /*((Button)event.getSource()).getScene().getWindow().hide(); pop up */
+        root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Categorías");
+        stage.show();
     }
     }
         }
@@ -98,8 +106,13 @@ public class CategoriaController {
     @FXML
     public void cancel(ActionEvent event) throws IOException {
 
-        
-        Stage myStage= (Stage) this.volver.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Categorías");
+        stage.show();
+       /* Stage myStage= (Stage) this.volver.getScene().getWindow(); CERRARÍA DEL TODO
         myStage.close();/*También se puede hide, no sé la diferencia*/
         
     }

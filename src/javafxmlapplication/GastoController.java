@@ -181,6 +181,60 @@ public class GastoController implements Initializable{
             categoria.setPromptText(selectedCategory.getName());
         }
     }*/
+    @FXML
+    public void actualizar() throws IOException {
+
+        
+        try {
+        todasCategorias = (Acount.getInstance().getUserCategories());
+        /*Category cat2 = todasCategorias.get(0);
+        String adaptado = cat2.getName();
+        System.out.println(adaptado);*/
+        }
+        catch (AcountDAOException error) {
+             Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("No hay categorías de gastos registradas");
+                errorUs.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(GastoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        categoria.getItems().clear();
+        categoria.getItems().addAll(todasCategorias);
+        
+        /*Para que se vean los nombres al DESPLEGAR el combobox*/
+        categoria.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
+            @Override
+            public ListCell<Category> call(ListView<Category> param) {
+                return new ListCell<Category>() {
+                    @Override
+                    protected void updateItem(Category item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                        };
+            }
+        });
+        
+        // Para que se vea el nombre de la selección*/
+        categoria.setButtonCell(new ListCell<Category>() {
+            @Override
+            protected void updateItem(Category item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item != null) {
+                    setText(item.getName());
+                } else {
+                    setText(null);
+                }
+            }
+        });
+    
+    }
     
     @FXML
     public void cancel(ActionEvent event) throws IOException {

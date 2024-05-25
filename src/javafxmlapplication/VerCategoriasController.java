@@ -20,6 +20,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Acount;
@@ -31,6 +32,7 @@ public class VerCategoriasController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    
 
     @FXML
     private Button inicio;
@@ -52,6 +54,8 @@ public class VerCategoriasController implements Initializable {
     private Button cerrarS;
     @FXML
     private ListView listaCategorias;
+    @FXML
+    public boolean actualizar = false;
     
    /* private ObservableList<Category> todasCategorias;*/
     private List <Category> todasCat;
@@ -162,7 +166,7 @@ public class VerCategoriasController implements Initializable {
             if (eliminar) {
          Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Eliminar categoría");
-        alert.setHeaderText("¿Quiere eliminar la categoría seleccionada?");
+        alert.setHeaderText("¿Quiere eliminar la categoría seleccionada? Se eliminarán todos los gastos asociados.");
         if (alert.showAndWait().get() == ButtonType.OK) {
         eliminar = Acount.getInstance().removeCategory(catSeleccionada);
         actualizarCategorias();
@@ -214,7 +218,7 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));
-        stage = new Stage();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); /*Aquí, para pop up new Stage*/
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Añadir categoría");
