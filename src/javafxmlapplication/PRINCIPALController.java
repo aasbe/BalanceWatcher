@@ -2,9 +2,11 @@ package javafxmlapplication;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +18,17 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Acount;
 import model.AcountDAOException;
+import model.Category;
+import model.Charge;
 
 public class PRINCIPALController implements Initializable {
 
@@ -42,6 +52,18 @@ public class PRINCIPALController implements Initializable {
     private Button volver;
     @FXML
     private Label nick;
+    @FXML
+    private TableView visor;
+    @FXML
+    private TableColumn gasto;
+    @FXML
+    private TableColumn coste;
+    @FXML
+    private TableColumn fecha;
+    
+    
+    private ObservableList<Charge> todosGastos;
+    private List <Charge> todosGas;
     
     String usuario;
 
@@ -57,7 +79,42 @@ public class PRINCIPALController implements Initializable {
             Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
         }
         nick.setText(usuario);
+        
+        //Añadiendo gastos
+        
+                     try {
+            todosGas = (Acount.getInstance().getUserCharges());
+        } catch (AcountDAOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        visor.getItems().addAll(todosGas);
+        /*gasto.getColumns().addAll(visor); */
+        /* todosGastos = visor.getSelectionModel().getSelectedItems();*/
+        
+       /* visor.setCellFactory(new Callback<TableView<Charge>, TableCell<Charge>>(0,0) {
+            @Override
+            public ListCell<Charge> call(TableView<Charge> param) {
+                return new ListCell<Charge>() {
+                    @Override
+                    protected void updateItem(Charge item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        }
+                    
+                        };
+            }
+                        }              
+        });*/
+       
+        
     }
+    
 
     
     @FXML

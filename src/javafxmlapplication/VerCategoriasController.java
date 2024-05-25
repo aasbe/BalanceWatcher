@@ -16,9 +16,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Acount;
 import model.AcountDAOException;
 import model.Category;
@@ -34,7 +37,7 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private Button gastos;
     @FXML
-    private Button addGas;
+    private Button eliminar;
     @FXML
     private Button addCat;
     @FXML
@@ -48,10 +51,12 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private ListView listaCategorias;
     
-    private ObservableList<Category> todasCategorias;
+   /* private ObservableList<Category> todasCategorias;*/
     private List <Category> todasCat;
     
-    String usuario;
+    private ObservableList<Category> catSeleccionadas;
+    private Category catSeleccionada;
+    private String usuario;
 
 
     @Override
@@ -73,12 +78,34 @@ public class VerCategoriasController implements Initializable {
 */
         try {
             usuario = Acount.getInstance().getLoggedUser().getNickName();
+            todasCat = (Acount.getInstance().getUserCategories());
         } catch (AcountDAOException ex) {
             Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
         }
         nick.setText(usuario);
+        listaCategorias.getItems().addAll(todasCat);
+        
+        listaCategorias.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
+            @Override
+            public ListCell<Category> call(ListView<Category> param) {
+                return new ListCell<Category>() {
+                    @Override
+                    protected void updateItem(Category item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                        };
+            }
+        });
+        catSeleccionadas = listaCategorias.getSelectionModel().getSelectedItems();
+        
+    
     }
 
 
@@ -122,7 +149,66 @@ public class VerCategoriasController implements Initializable {
         stage.setTitle("BalanceWatcher");
         stage.show();
     }
-
+    
+    @FXML
+    private void eliminarCategoria (ActionEvent event)  throws IOException {
+        
+    catSeleccionada = catSeleccionadas.get(0);
+    boolean eliminar = true;
+    try {
+                                                                     
+            if (eliminar) {
+         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Eliminar categoría");
+        alert.setHeaderText("¿Quiere eliminar la categoría seleccionada?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+        eliminar = Acount.getInstance().removeCategory(catSeleccionada);
+        ActualizarCategorias();
+        }
+    }
+            
+    }
+    catch (AcountDAOException error){
+    
+    Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("No se pudo eliminar la categoría.");
+                errorUs.showAndWait();
+                }
+    
+}
+    
+    @FXML
+    public void ActualizarCategorias() throws IOException{
+             try {
+            todasCat = (Acount.getInstance().getUserCategories());
+        } catch (AcountDAOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        listaCategorias.getItems().clear();
+        listaCategorias.getItems().addAll(todasCat);
+        
+        listaCategorias.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
+            @Override
+            public ListCell<Category> call(ListView<Category> param) {
+                return new ListCell<Category>() {
+                    @Override
+                    protected void updateItem(Category item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        }
+                    }
+                        };
+            }
+        });
+        catSeleccionadas = listaCategorias.getSelectionModel().getSelectedItems(); 
+    }
+    
     @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));
@@ -132,13 +218,5 @@ public class VerCategoriasController implements Initializable {
         stage.setTitle("Añadir categoría");
         stage.show();
     }
-/*Podríamos quitarlo en estas, no?*/
-        public void addGasto(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Añadir gasto");
-        stage.show();
-    }
+
 }

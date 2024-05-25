@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,6 +18,9 @@
             <font>
                 <Font name="Bernard MT Condensed" size="40.0" />
             </font>
+         <effect>
+            <Glow />
+         </effect>
         </Label>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="739.0" spacing="5.0">
             <children>
@@ -68,19 +73,25 @@
             <children>
                 <Button fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Cancelar" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
                 </Button>
                 <Button fx:id="guardar" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#addCategoria" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Guardar" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" />
+               </effect>
                 </Button>
             </children>
             <VBox.margin>

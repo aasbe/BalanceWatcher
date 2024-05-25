@@ -37,12 +37,17 @@ public class CategoriaController {
     private TextField categoria;
     @FXML
     private TextField descripcion;
+    
    
     /* Para usar los métodos: Acount.getInstance().*metodoquequieras()*; */
     
     @FXML
     public void addCategoria(ActionEvent event) throws IOException  {
         String Categoria = categoria.getText();
+       
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCategorias.fxml"));
+        root = loader.load();
+        VerCategoriasController controllerVerCat = loader.getController();
         try{
         
             if (Categoria.isEmpty()) {
@@ -55,6 +60,7 @@ public class CategoriaController {
     boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
     System.out.println(Acount.getInstance().getUserCategories());
     if (cat) {
+        controllerVerCat.ActualizarCategorias();
         ((Button)event.getSource()).getScene().getWindow().hide();
     }
     }

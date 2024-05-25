@@ -37,7 +37,7 @@
             </VBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="300.0" spacing="200.0">
                <children>
-                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Volver" textFill="WHITE">
+                  <Button id="#volver" fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Volver" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="accederB" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#acceder" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Acceder" textFill="WHITE">
+                  <Button fx:id="accederB" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#acceder" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Acceder" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

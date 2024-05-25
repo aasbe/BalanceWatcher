@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +13,12 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #8FBC8F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.AvataresController">
    <children>
-      <TilePane hgap="10.0" layoutX="110.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="247.0" prefRows="3" prefWidth="289.0" vgap="10.0">
+      <ImageView fitHeight="289.0" fitWidth="279.0" layoutX="424.0" layoutY="39.0">
+         <image>
+            <Image url="@../Picture2.png" />
+         </image>
+      </ImageView>
+      <TilePane hgap="10.0" layoutX="108.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="315.0" prefRows="3" prefWidth="271.0" vgap="10.0">
          <children>
             <ImageView fx:id="persona" fitHeight="70.0" fitWidth="82.0" onMouseClicked="#persona" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -21,6 +27,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="abeja" fitHeight="73.0" fitWidth="65.0" onMouseClicked="#abeja" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -29,6 +38,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="delfin" fitHeight="73.0" fitWidth="53.0" onMouseClicked="#delfin" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,6 +49,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="vaca" fitHeight="73.0" fitWidth="49.0" onMouseClicked="#vaca" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,14 +60,20 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
-            <ImageView fx:id="cerdo" fitHeight="80.0" fitWidth="47.0" onMouseClicked="#cerdo" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cerdo" fitHeight="71.0" fitWidth="65.0" onMouseClicked="#cerdo" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../avatares/🐷%20Pig%20Face%20Emoji.jpeg" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="ardilla" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#ardilla" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -61,6 +82,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="zorro" fitHeight="78.0" fitWidth="57.0" onMouseClicked="#zorro" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,6 +93,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="panda" fitHeight="76.0" fitWidth="54.0" onMouseClicked="#panda" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -77,6 +104,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
             <ImageView fx:id="pato" fitHeight="80.0" fitWidth="50.0" onMouseClicked="#pato" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -85,6 +115,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="8.83" width="16.32" />
+               </effect>
             </ImageView>
          </children>
          <opaqueInsets>
@@ -98,7 +131,11 @@
          <image>
             <Image url="@../avatares/default.png" />
          </image>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" />
+         </effect>
       </ImageView>
+      <ImageView fitHeight="114.0" fitWidth="136.0" layoutX="662.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <HBox alignment="CENTER" layoutY="300.0" prefHeight="100.0" prefWidth="800.0" spacing="500.0">
          <children>
             <Button fx:id="volver" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" stylesheets="@estiloBotones.css" text="Volver" textFill="WHITE">
@@ -109,18 +146,26 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="seleccionar" mnemonicParsing="false" onAction="#seleccionar" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #64bcff;" text="Seleccionar perfil" textFill="WHITE">
+            <Button fx:id="seleccionar" mnemonicParsing="false" onAction="#seleccionar" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Seleccionar perfil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" />
+               </effect>
             </Button>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
          </padding>
       </HBox>
+      <ImageView fitHeight="70.0" fitWidth="103.0" layoutX="697.0" layoutY="81.0">
+         <image>
+            <Image url="@../este%20eres%20tu.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

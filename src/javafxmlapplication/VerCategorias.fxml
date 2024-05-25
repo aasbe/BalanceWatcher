@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -27,14 +28,56 @@
             </HBox>
             <VBox prefHeight="301.0" prefWidth="181.0" spacing="30.0">
                <children>
-                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" text="INICIO" />
-                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" text="GASTOS" />
-                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="CATEGORIAS" />
-                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" text="PERFIL" />
-                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
                   </Button>
                </children>
                <VBox.margin>
@@ -50,19 +93,23 @@
          <children>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" wrappingWidth="79.46990966796875">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Text>
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0" />
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-            <TextField promptText="Buscar gasto por nombre">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </TextField>
             <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="428.0" spacing="35.0">
+               <children>
+                  <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" text="Añadir Categoría" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" text="Eliminar Categoría" />
+               </children>
+            </HBox>
          </children>
          <HBox.margin>
             <Insets left="20.0" right="20.0" />

@@ -61,10 +61,10 @@ public class GastoController implements Initializable{
     private DatePicker fecha;
     @FXML
     private List<Category> todasCategorias;
-    @FXML
+   /* @FXML
     private Label descifrar;
     
-    Category cat1;
+    Category cat1;*/
    
     /* Para usar los métodos: Acount.getInstance().*metodoquequieras()*; */
     
