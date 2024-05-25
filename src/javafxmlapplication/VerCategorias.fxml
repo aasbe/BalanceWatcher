@@ -68,7 +68,7 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Button>
-                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -97,7 +97,10 @@
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font></Text>
-                  <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0" />
+                  <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
                </children>
                <VBox.margin>
                   <Insets />
@@ -106,8 +109,8 @@
             <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" />
             <HBox alignment="CENTER" prefHeight="26.0" prefWidth="428.0" spacing="35.0">
                <children>
-                  <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" text="Añadir Categoría" />
-                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" text="Eliminar Categoría" />
+                  <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" stylesheets="@estiloBotones.css" text="Añadir Categoría" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" stylesheets="@estiloBotones.css" text="Eliminar Categoría" />
                </children>
             </HBox>
          </children>

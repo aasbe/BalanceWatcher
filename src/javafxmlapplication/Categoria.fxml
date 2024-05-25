@@ -26,7 +26,10 @@
             <children>
             <HBox>
                <children>
-                      <Label text="Categoría*" />
+                      <Label text="Categoría*">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets left="168.0" />
@@ -54,13 +57,22 @@
             </Separator>
             <HBox prefHeight="18.0" prefWidth="346.0">
                <children>
-                      <Label text="Descripción" />
+                      <Label text="Descripción">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font></Label>
                </children>
                <VBox.margin>
                   <Insets left="168.0" />
                </VBox.margin>
             </HBox>
-                <TextField fx:id="descripcion" maxWidth="-Infinity" prefHeight="67.0" prefWidth="402.0" />
+                <TextField fx:id="descripcion" maxWidth="-Infinity" prefHeight="67.0" prefWidth="402.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
             </children>
             <opaqueInsets>
                 <Insets />

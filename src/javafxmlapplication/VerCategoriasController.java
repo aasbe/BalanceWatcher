@@ -49,6 +49,8 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private Button volver;
     @FXML
+    private Button cerrarS;
+    @FXML
     private ListView listaCategorias;
     
    /* private ObservableList<Category> todasCategorias;*/
@@ -163,7 +165,7 @@ public class VerCategoriasController implements Initializable {
         alert.setHeaderText("¿Quiere eliminar la categoría seleccionada?");
         if (alert.showAndWait().get() == ButtonType.OK) {
         eliminar = Acount.getInstance().removeCategory(catSeleccionada);
-        ActualizarCategorias();
+        actualizarCategorias();
         }
     }
             
@@ -179,7 +181,7 @@ public class VerCategoriasController implements Initializable {
 }
     
     @FXML
-    public void ActualizarCategorias() throws IOException{
+    public void actualizarCategorias() throws IOException{
              try {
             todasCat = (Acount.getInstance().getUserCategories());
         } catch (AcountDAOException ex) {
@@ -217,6 +219,32 @@ public class VerCategoriasController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Añadir categoría");
         stage.show();
+    }
+    
+        @FXML
+    public void cerrarSesion(ActionEvent event) throws IOException {
+        
+        try {
+         /*confirmación de cerrar sesión*/
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
+        alert.setHeaderText("CERRANDO SESIÓN");
+        alert.setContentText("¿Seguro que desea cerrar la sesión?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            boolean cerrar =  Acount.getInstance().logOutUser();
+        root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();}
+        }
+        
+        catch (AcountDAOException error) {    
+         Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("Error al cerrar sesión.");
+                errorUs.showAndWait();  
+        }
     }
 
 }

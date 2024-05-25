@@ -13,11 +13,6 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #8FBC8F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.AvataresController">
    <children>
-      <ImageView fitHeight="289.0" fitWidth="279.0" layoutX="424.0" layoutY="39.0">
-         <image>
-            <Image url="@../Picture2.png" />
-         </image>
-      </ImageView>
       <TilePane hgap="10.0" layoutX="108.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefColumns="3" prefHeight="315.0" prefRows="3" prefWidth="271.0" vgap="10.0">
          <children>
             <ImageView fx:id="persona" fitHeight="70.0" fitWidth="82.0" onMouseClicked="#persona" pickOnBounds="true" preserveRatio="true">
@@ -162,7 +157,7 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </HBox>
-      <ImageView fitHeight="70.0" fitWidth="103.0" layoutX="697.0" layoutY="81.0">
+      <ImageView fitHeight="87.0" fitWidth="121.0" layoutX="679.0" layoutY="14.0">
          <image>
             <Image url="@../este%20eres%20tu.png" />
          </image>

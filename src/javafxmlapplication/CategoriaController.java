@@ -60,7 +60,7 @@ public class CategoriaController {
     boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
     System.out.println(Acount.getInstance().getUserCategories());
     if (cat) {
-        controllerVerCat.ActualizarCategorias();
+        controllerVerCat.actualizarCategorias();
         ((Button)event.getSource()).getScene().getWindow().hide();
     }
     }

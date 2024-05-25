@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -47,6 +48,8 @@ public class PerfilController implements Initializable {
     private TextField apellido;
     @FXML
     private Label fechat;
+    @FXML
+    private Button cerrarS;
     
     String nnombre;
     String ncorreo;
@@ -174,4 +177,30 @@ public class PerfilController implements Initializable {
         stage.setTitle("PRINCIPAL");
         stage.show();
     } 
+    
+        @FXML
+    public void cerrarSesion(ActionEvent event) throws IOException {
+        
+        try {
+         /*confirmación de cerrar sesión*/
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cerrar sesión");
+        alert.setHeaderText("CERRANDO SESIÓN");
+        alert.setContentText("¿Seguro que desea cerrar la sesión?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            boolean cerrar =  Acount.getInstance().logOutUser();
+        root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();}
+        }
+        
+        catch (AcountDAOException error) {    
+         Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("Error al cerrar sesión.");
+                errorUs.showAndWait();  
+        }
+    }
 }

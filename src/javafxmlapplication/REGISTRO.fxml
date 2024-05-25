@@ -7,6 +7,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -16,7 +17,15 @@
 
 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.REGISTROController">
    <children>
-      <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="386.0" prefWidth="466.0" HBox.hgrow="ALWAYS">
+      <ImageView fx:id="avatar" fitHeight="135.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../avatares/default.png" />
+         </image>
+         <HBox.margin>
+            <Insets bottom="135.0" left="10.0" right="-120.0" />
+         </HBox.margin>
+      </ImageView>
+      <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="390.0" prefWidth="550.0" HBox.hgrow="ALWAYS">
          <children>
             <Label prefWidth="305.0" text="Crear una cuenta..." textFill="DARKSEAGREEN">
                <font>
@@ -25,19 +34,33 @@
                <VBox.margin>
                   <Insets left="40.0" />
                </VBox.margin>
+               <effect>
+                  <Glow />
+               </effect>
             </Label>
+            <VBox prefHeight="49.0" prefWidth="362.0">
+               <VBox.margin>
+                  <Insets right="100.0" />
+               </VBox.margin>
+            </VBox>
             <VBox alignment="CENTER" prefHeight="324.0" prefWidth="420.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label text="Nombre*" />
+                        <Label text="Nombre*">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <TextField fx:id="nombre" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label text="Apellido*" />
-                        <TextField fx:id="apellido" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" />
+                        <Label text="Apellido*">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="apellido" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefHeight="26.0" prefWidth="202.0" />
                      </children>
                   </HBox>
                   <Separator opacity="0.0" prefWidth="200.0">
@@ -47,26 +70,38 @@
                   </Separator>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label text="Usuario*" />
+                        <Label text="Usuario*">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <TextField fx:id="usuario" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" promptText="sin espacios" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Label text="Contraseña*" />
-                        <PasswordField fx:id="contraseña" onKeyReleased="#keyReleasedProperty" prefWidth="200.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
+                        <Label text="Contraseña*">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <PasswordField fx:id="contraseña" onKeyReleased="#keyReleasedProperty" prefHeight="26.0" prefWidth="221.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="292.0" spacing="20.0">
                      <children>
-                        <Label text="Correo electrónico*" />
-                        <TextField fx:id="correo" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefWidth="250.0" />
+                        <Label text="Correo electrónico*">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="correo" maxWidth="-Infinity" onKeyReleased="#keyReleasedProperty" prefHeight="26.0" prefWidth="250.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="465.0" spacing="30.0">
                      <children>
-                        <Label text="Foto de perfil" />
-                        <Button fx:id="selecciona" mnemonicParsing="false" onAction="#SeleccionarAvatar" text="Selecciona">
+                        <Label text="Foto de perfil">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <Button fx:id="selecciona" mnemonicParsing="false" onAction="#SeleccionarAvatar" stylesheets="@estiloBotones.css" text="Selecciona">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -80,7 +115,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="539.0" spacing="40.0">
                <children>
-                  <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Volver" textFill="WHITE">
+                  <Button fx:id="atras" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" stylesheets="@estiloBotones.css" text="Volver" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -88,8 +123,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="campos obligatorios con *" />
-                  <Button fx:id="siguiente" mnemonicParsing="false" onAction="#newuser" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Siguiente" textFill="WHITE">
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="campos obligatorios con *">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></Text>
+                  <Button fx:id="siguiente" mnemonicParsing="false" onAction="#newuser" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Siguiente" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -107,16 +145,11 @@
             <Insets top="10.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="401.0" prefWidth="269.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="221.0" style="-fx-background-color: #8FBC8F;" HBox.hgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="94.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../LogoOficial.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="avatar" fitHeight="60.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../avatares/default.png" />
                </image>
             </ImageView>
          </children>

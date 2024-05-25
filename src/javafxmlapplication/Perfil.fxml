@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -31,7 +32,7 @@
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS" />
                   <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS" />
                   <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL" />
-                  <Button fx:id="volver1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -52,6 +53,9 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <effect>
+                  <Glow />
+               </effect>
                 </Label>
             <HBox spacing="10.0">
                <VBox.margin>
@@ -60,33 +64,62 @@
                <children>
                       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="240.0" spacing="5.0">
                           <children>
-                              <Label fx:id="nombre2" alignment="CENTER" text="Nombre" />
+                              <Label fx:id="nombre2" alignment="CENTER" text="Nombre">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <TextField fx:id="nombre" prefHeight="26.0" prefWidth="322.0" />
-                              <Label text="Contraseña" />
+                              <Label text="Contraseña">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <PasswordField fx:id="contraseña" />
-                              <Label text="Correo electrónico" />
+                              <Label text="Correo electrónico">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <TextField fx:id="correo" prefHeight="26.0" prefWidth="322.0" />
                           </children>
                       </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="240.0" spacing="5.0">
                      <children>
-                        <Label text="Apellido" />
+                        <Label text="Apellido">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <TextField fx:id="apellido" prefHeight="26.0" prefWidth="322.0" />
-                              <Label text="Usuario" />
+                              <Label text="Usuario">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <Label fx:id="nick" alignment="CENTER" prefHeight="25.33" prefWidth="82.0" />
-                        <Label text="Fecha de registro" />
+                        <Label text="Fecha de registro">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
                         <Label fx:id="fechat" prefHeight="25.33" prefWidth="82.0" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="40.0" prefWidth="475.0" spacing="10.0">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="558.0" spacing="10.0">
                       <children>
-                          <ImageView fx:id="avatar" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                          <ImageView fx:id="avatar" fitHeight="80.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                   <Image url="@../default.png" />
                               </image>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
                           </ImageView>
+                  <ImageView fitHeight="81.0" fitWidth="124.0">
+                     <image>
+                        <Image url="@../sss.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
                       </children>
                   </HBox>
                 <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="300.0" spacing="200.0">
@@ -99,7 +132,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button fx:id="guardar" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarDatos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" text="Guardar" textFill="WHITE">
+                        <Button fx:id="guardar" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#guardarDatos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Guardar" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>

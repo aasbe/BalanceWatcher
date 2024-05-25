@@ -35,7 +35,7 @@
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" text="GASTOS" />
                   <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" text="CATEGORIAS" />
                   <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" text="PERFIL" />
-                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#volver" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -68,9 +68,9 @@
             </TextField>
             <GridPane prefHeight="123.0" prefWidth="464.0" VBox.vgrow="ALWAYS">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="35.79998779296875" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.20001220703125" minWidth="10.0" prefWidth="50.20001220703125" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.7999755859375" minWidth="10.0" prefWidth="392.7999755859375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="69.19994812011718" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.20001220703125" minWidth="10.0" prefWidth="53.8" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.7999755859375" minWidth="10.0" prefWidth="77.8" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -146,11 +146,12 @@
             <Insets left="20.0" right="20.0" />
          </HBox.margin>
       </VBox>
-      <TableView fx:id="visor" prefHeight="400.0" prefWidth="371.0">
+      <TableView fx:id="visor" prefHeight="400.0" prefWidth="482.0">
         <columns>
-          <TableColumn fx:id="gasto" prefWidth="75.0" text="Gasto" />
-          <TableColumn fx:id="coste" prefWidth="75.0" text="Coste" />
-            <TableColumn fx:id="fecha" prefWidth="75.0" text="Fecha" />
+          <TableColumn fx:id="gasto" prefWidth="119.20001220703125" text="Gasto" />
+            <TableColumn fx:id="categoria" prefWidth="93.5999755859375" text="Categoría" />
+          <TableColumn fx:id="coste" prefWidth="69.60003662109375" text="Coste" />
+            <TableColumn fx:id="fecha" prefWidth="99.2000732421875" text="Fecha" />
         </columns>
       </TableView>
    </children>

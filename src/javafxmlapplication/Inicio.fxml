@@ -53,7 +53,7 @@
             </HBox>
             <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="150.0" spacing="100.0">
                <children>
-                  <Button fx:id="registro" mnemonicParsing="false" onAction="#irRegistro" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #8fbc8f;" text="REGISTRO" textFill="WHITE">
+                  <Button fx:id="registro" mnemonicParsing="false" onAction="#irRegistro" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #8fbc8f;" stylesheets="@estiloBotones.css" text="REGISTRO" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="16.0" />
                      </font>
@@ -61,7 +61,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="autenticacion" mnemonicParsing="false" onAction="#irAutenticacion" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #8fbc8f;" text="AUTENTICACIÓN" textFill="WHITE">
+                  <Button fx:id="autenticacion" mnemonicParsing="false" onAction="#irAutenticacion" prefHeight="59.0" prefWidth="218.0" style="-fx-background-color: #8fbc8f;" stylesheets="@estiloBotones.css" text="AUTENTICACIÓN" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="16.0" />
                      </font>
@@ -75,7 +75,7 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" prefHeight="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #fb0000;" text="Salir" textFill="WHITE">
+            <Button fx:id="salirfxID" mnemonicParsing="false" onAction="#bSalir" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #fb0000;" stylesheets="@estiloBotones.css" text="Salir" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

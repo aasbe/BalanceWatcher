@@ -3,8 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -56,7 +56,7 @@
                      <effect>
                         <DropShadow blurType="ONE_PASS_BOX" />
                      </effect></Button>
-                  <Button fx:id="volver" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -74,23 +74,34 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="551.0" prefWidth="578.0" spacing="30.0" HBox.hgrow="ALWAYS">
+      <VBox prefHeight="551.0" prefWidth="578.0" spacing="25.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
+            <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="5.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" />
+                  <Text fx:id="textobienvenida" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" />
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0" />
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
             </HBox>
-            <TextField promptText="Buscar gasto por nombre">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </TextField>
-            <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" />
+            <TableView fx:id="visor" editable="true" prefHeight="238.0" prefWidth="578.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="gasto" prefWidth="119.20001220703125" text="Gasto" />
+                  <TableColumn fx:id="categoria" prefWidth="93.5999755859375" text="Categoría" />
+                  <TableColumn fx:id="coste" prefWidth="69.60003662109375" text="Coste" />
+                  <TableColumn fx:id="fecha" prefWidth="99.2000732421875" text="Fecha" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER" spacing="100.0">
+               <children>
+                  <Button fx:id="actualizar" mnemonicParsing="false" text="Actualizar gasto" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarGasto" text="Eliminar gasto" />
+               </children>
+            </HBox>
          </children>
          <HBox.margin>
             <Insets left="20.0" right="20.0" />

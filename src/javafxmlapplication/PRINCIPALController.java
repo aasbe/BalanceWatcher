@@ -2,10 +2,12 @@ package javafxmlapplication;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +25,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Acount;
@@ -49,20 +52,22 @@ public class PRINCIPALController implements Initializable {
     @FXML
     private Button perfil; // Botón para acceder al perfil
     @FXML
-    private Button volver;
+    private Button cerrarS;
     @FXML
     private Label nick;
     @FXML
-    private TableView visor;
+    private TableView <Charge> visor;
     @FXML
-    private TableColumn gasto;
+    private TableColumn <Charge, String> gasto; // <From Type, Type gonnabe>
     @FXML
-    private TableColumn coste;
+    private TableColumn <Charge, Category> categoria; 
     @FXML
-    private TableColumn fecha;
+    private TableColumn <Charge, Double> coste;
+    @FXML
+    private TableColumn <Charge, LocalDate> fecha;
     
     
-    private ObservableList<Charge> todosGastos;
+    private ObservableList<Charge> todosGastos = FXCollections.observableArrayList();
     private List <Charge> todosGas;
     
     String usuario;
@@ -89,12 +94,52 @@ public class PRINCIPALController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(PRINCIPALController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        visor.getItems().addAll(todosGas);
-        /*gasto.getColumns().addAll(visor); */
-        /* todosGastos = visor.getSelectionModel().getSelectedItems();*/
+        todosGastos.addAll(todosGas);
         
-       /* visor.setCellFactory(new Callback<TableView<Charge>, TableCell<Charge>>(0,0) {
+        /*Pillas los nombres de los atributos (entre paréntesis) de lo que quieres que se vea*/
+        gasto.setCellValueFactory(new PropertyValueFactory <Charge, String>("name"));
+        categoria.setCellValueFactory(new PropertyValueFactory <Charge, Category>("category"));     
+        /*Para que se vea legible el nombre de las categorías*/
+        categoria.setCellFactory(new Callback<TableColumn<Charge, Category>, TableCell<Charge,Category>>() {
+            @Override
+            public TableCell<Charge, Category> call(TableColumn<Charge, Category> param) {
+                return new TableCell<Charge, Category>() {
+                    @Override
+                    protected void updateItem(Category item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item.getName());
+                        } else {
+                            setText(null);
+                        };
+                    }
+                        };
+            }
+        });
+        
+        coste.setCellValueFactory(new PropertyValueFactory<Charge, Double>("cost"));
+        /*Añadir € */
+        coste.setCellFactory(new Callback<TableColumn<Charge, Double>, TableCell<Charge,Double>>() {
+            @Override
+            public TableCell<Charge, Double> call(TableColumn<Charge, Double> param) {
+                return new TableCell<Charge, Double>() {
+                    @Override
+                    protected void updateItem(Double item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item != null) {
+                            setText(item + " €");
+                        } else {
+                            setText(null);
+                        };
+                    }
+                        };
+            }
+        });
+        fecha.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
+        
+        visor.setItems(todosGastos);
+
+       /*visor.setCellFactory(new Callback<TableView<Charge>, TableCell<Charge>>(0,0) {
             @Override
             public ListCell<Charge> call(TableView<Charge> param) {
                 return new ListCell<Charge>() {
@@ -148,18 +193,29 @@ public class PRINCIPALController implements Initializable {
     }
     
     @FXML
-    public void volver(ActionEvent event) throws IOException {
-        /*confirmación de cerrar sesión*/
+    public void cerrarSesion(ActionEvent event) throws IOException {
+        
+        try {
+         /*confirmación de cerrar sesión*/
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Cerrar sesión");
         alert.setHeaderText("CERRANDO SESIÓN");
         alert.setContentText("¿Seguro que desea cerrar la sesión?");
         if (alert.showAndWait().get() == ButtonType.OK) {
+            boolean cerrar =  Acount.getInstance().logOutUser();
         root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();}
+        }
+        
+        catch (AcountDAOException error) {    
+         Alert errorUs = new Alert(Alert.AlertType.ERROR);
+                errorUs.setTitle("Error");
+                errorUs.setHeaderText("Error al cerrar sesión.");
+                errorUs.showAndWait();  
+        }
     }
 
     
