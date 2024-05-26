@@ -74,9 +74,9 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox prefHeight="400.0" prefWidth="300.0" spacing="20.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="300.0" spacing="20.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido,">
                      <font>
@@ -105,27 +105,22 @@
                      </font></Label>
                </children>
             </HBox>
-            <TextArea fx:id="gastoTotal" prefHeight="134.0" prefWidth="198.0" />
+            <TextArea fx:id="gastoTotal" prefHeight="134.0" prefWidth="198.0" VBox.vgrow="ALWAYS" />
             <Separator layoutX="10.0" layoutY="148.0" prefWidth="200.0" />
             <HBox prefHeight="69.0" prefWidth="579.0">
                <children>
-                  <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
+                  <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="61.0" prefWidth="198.0" spacing="10.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Gasto">
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
-                           </font></Text>
-                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" prefHeight="26.0" prefWidth="67.0" stylesheets="@estiloBotones.css" text="GASTO" />
+                           </font>
+                        </Text>
+                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" prefHeight="54.0" prefWidth="124.0" stylesheets="@estiloBotones.css" text="GASTO" />
                      </children>
-                  </VBox>
-                  <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Categoría">
-                           <font>
-                              <Font name="System Bold Italic" size="12.0" />
-                           </font></Text>
-                        <Button fx:id="addCat" mnemonicParsing="false" onAction="#irAddCategoria" prefHeight="26.0" prefWidth="106.0" stylesheets="@estiloBotones.css" text="CATEGORÍA" />
-                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
                   </VBox>
                </children>
             </HBox>
