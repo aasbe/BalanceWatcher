@@ -8,12 +8,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.GastoController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@fondoañadircategorias.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.GastoController">
     <children>
         <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="598.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
             <children>
@@ -21,6 +22,9 @@
                     <font>
                         <Font name="Bernard MT Condensed" size="40.0" />
                     </font>
+               <effect>
+                  <Glow />
+               </effect>
                 </Label>
                 <VBox alignment="CENTER" prefHeight="494.0" prefWidth="739.0" spacing="10.0">
                     <children>

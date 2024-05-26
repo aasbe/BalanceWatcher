@@ -29,28 +29,28 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO">
+                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="INICIO">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                      <effect>
                         <DropShadow blurType="ONE_PASS_BOX" />
                      </effect></Button>
-                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS">
+                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="GASTOS">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                      <effect>
                         <DropShadow blurType="ONE_PASS_BOX" />
                      </effect></Button>
-                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS">
+                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="CATEGORIAS">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                      <effect>
                         <DropShadow blurType="ONE_PASS_BOX" />
                      </effect></Button>
-                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL">
+                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="PERFIL">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -94,12 +94,15 @@
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="5.0">
                <children>
-                  <Text fx:id="textobienvenida" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido">
+                  <Text fx:id="textobienvenida" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido,">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font></Text>
-                  <Label fx:id="nick" prefHeight="18.0" prefWidth="343.0" />
-                  <Button fx:id="verFactura" mnemonicParsing="false" onAction="#seleccionar" prefHeight="26.0" prefWidth="92.0" text="Ver factura" />
+                  <Label fx:id="nick" prefHeight="18.0" prefWidth="343.0">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Button fx:id="verFactura" mnemonicParsing="false" onAction="#seleccionar" prefHeight="26.0" prefWidth="92.0" stylesheets="@estiloBotones.css" text="Ver factura" />
                </children>
                <VBox.margin>
                   <Insets />

@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.CategoriaController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@fondoañadircategorias.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.CategoriaController">
     <children>
-        <Label text="Añadir Categoría" textFill="DARKSEAGREEN">
+        <Label prefHeight="76.0" prefWidth="262.0" text="Añadir Categoría" textFill="DARKSEAGREEN">
             <font>
                 <Font name="Bernard MT Condensed" size="40.0" />
             </font>
@@ -23,7 +23,7 @@
             <Glow />
          </effect>
         </Label>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="739.0" spacing="5.0" VBox.vgrow="ALWAYS">
+        <VBox alignment="CENTER" prefHeight="154.0" prefWidth="617.0" spacing="5.0" VBox.vgrow="ALWAYS">
             <children>
             <HBox>
                <children>
@@ -39,12 +39,15 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="14.0" prefWidth="571.0">
+            <HBox prefHeight="26.0" prefWidth="529.0">
                <children>
                       <TextField fx:id="categoria" maxWidth="-Infinity" prefWidth="200.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </TextField>
                </children>
                <VBox.margin>
@@ -69,7 +72,7 @@
             </HBox>
             <HBox prefHeight="88.0" prefWidth="564.0">
                <children>
-                  <TextArea fx:id="descripcion" maxWidth="466.0" prefHeight="88.0" prefRowCount="3" prefWidth="466.0" wrapText="true">
+                  <TextArea fx:id="descripcion" maxWidth="466.0" prefHeight="88.0" prefRowCount="3" prefWidth="415.0" wrapText="true">
                      <HBox.margin>
                         <Insets left="1.0" right="1.0" />
                      </HBox.margin>

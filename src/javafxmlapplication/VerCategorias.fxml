@@ -29,46 +29,46 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="301.0" prefWidth="181.0" spacing="30.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" stylesheets="@estiloBotones.css" text="INICIO">
+                  <Button fx:id="inicio" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPrincipal" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="INICIO">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
-                     </effect>
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Button>
-                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS">
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
+                  <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="GASTOS">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
-                     </effect>
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Button>
-                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS">
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
+                  <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="CATEGORIAS">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
-                     </effect>
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Button>
-                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL">
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
+                  <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" style="-fx-background-color: #7e9472; -fx-text-fill: white;" text="PERFIL">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
-                     </effect>
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Button>
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
                   <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -76,9 +76,6 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
-                     </effect>
                   </Button>
                </children>
                <VBox.margin>
@@ -109,11 +106,11 @@
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" wrappingWidth="79.46990966796875">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido," wrappingWidth="84.2698974609375">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font></Text>
-                  <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0">
+                  <Label fx:id="nick" prefHeight="38.0" prefWidth="91.0">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font></Label>
