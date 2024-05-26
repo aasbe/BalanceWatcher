@@ -84,7 +84,16 @@
                               <Font name="System Bold Italic" size="12.0" />
                            </font></Label>
                         <PasswordField fx:id="contraseña" onKeyReleased="#keyReleasedProperty" prefHeight="26.0" prefWidth="221.0" promptText="mínimo 7 carácteres" styleClass="texto" stylesheets="@registro.css" />
+                        <TextField fx:id="contraseñaVisible" managed="false" visible="false" prefHeight="26.0" prefWidth="221.0" />
+                        <ImageView fx:id="ojoImageView" fitHeight="34.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" onMousePressed="#mostrarContraseña" onMouseReleased="#ocultarContraseña">
+                           <image>
+                              <Image url="@ojo.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
+                     <VBox.margin>
+                        <Insets left="80.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="292.0" spacing="20.0">
                      <children>
