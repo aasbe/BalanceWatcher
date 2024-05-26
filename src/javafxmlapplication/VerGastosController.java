@@ -192,12 +192,22 @@ public class VerGastosController implements Initializable {
         /*System.out.println(gastoActual.getName());*/
        /* root = FXMLLoader.load(getClass().getResource("UpdateGasto.fxml"));*/
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root,800,600);
+        Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Actualizar gasto");
         stage.show();
         }
         
+    }
+    
+    public void addGasto(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
+        /*stage = new Stage();*/
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Añadir gasto");
+        stage.show();
     }
     
     @FXML
@@ -249,15 +259,6 @@ public class VerGastosController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("BalanceWatcher");
-        stage.show();
-    }
-
-        public void addGasto(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Añadir gasto");
         stage.show();
     }
     
