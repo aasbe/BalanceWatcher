@@ -28,6 +28,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -60,18 +61,16 @@ public class UpdateGastoController implements Initializable{
     @FXML
     public TextField titulo;
     @FXML
-    public TextField descripcion;
+    public TextArea descripcion;
     @FXML
     public TextField coste;
     @FXML
     public TextField cantidad;
     @FXML
     public DatePicker fecha;
-    @FXML
     private List<Category> todasCategorias;
     @FXML
     private ImageView marco;
-    @FXML
     public Charge gastoUpdate;
     
     private FileChooser fileChooser;
@@ -142,7 +141,6 @@ public class UpdateGastoController implements Initializable{
         
     }   
     
-    @FXML
     public void displayInit (Charge gastoPas) {
         gastoUpdate = gastoPas;
         Integer unidades = gastoPas.getUnits();
@@ -166,7 +164,6 @@ public class UpdateGastoController implements Initializable{
     }*/
     
     
-    @FXML
     public void confirmar (ActionEvent event) throws IOException, NumberFormatException{
         try {
             String Titulo = titulo.getText();
@@ -309,6 +306,10 @@ public class UpdateGastoController implements Initializable{
         stage.setScene(scene);
         stage.setTitle("Gastos");
         stage.show();    
+    }
+
+    @FXML
+    private void irAddCategoria(ActionEvent event) {
     }
 }
 /*
