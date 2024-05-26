@@ -104,7 +104,7 @@
                   <Insets top="10.0" />
                </padding>
             </HBox>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="619.0" spacing="10.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido," wrappingWidth="84.2698974609375">
                      <font>
