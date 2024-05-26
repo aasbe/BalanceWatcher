@@ -34,7 +34,7 @@
                   <Button fx:id="gastos" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerGastos" prefHeight="40.0" stylesheets="@estiloBotones.css" text="GASTOS" />
                   <Button fx:id="verCat" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irVerCategorias" prefHeight="40.0" stylesheets="@estiloBotones.css" text="CATEGORIAS" />
                   <Button fx:id="perfil" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irPerfil" prefHeight="40.0" stylesheets="@estiloBotones.css" text="PERFIL" />
-                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Button fx:id="cerrarS" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.css" text="CERRAR SESIÓN" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -71,7 +71,10 @@
             <Separator layoutX="10.0" layoutY="317.0" prefWidth="200.0" />
             <HBox>
                <children>
-                  <Label text="GASTO TOTAL" />
+                  <Label prefHeight="18.0" prefWidth="91.0" text="GASTO TOTAL">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Label>
                </children>
             </HBox>
             <TextArea fx:id="gastoTotal" prefHeight="134.0" prefWidth="198.0" />
@@ -80,14 +83,20 @@
                <children>
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Gasto" />
-                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" text="Button" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Gasto">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Text>
+                        <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" prefHeight="26.0" prefWidth="67.0" stylesheets="@estiloBotones.css" text="GASTO" />
                      </children>
                   </VBox>
                   <VBox prefHeight="67.0" prefWidth="289.0" spacing="10.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Categoría" />
-                        <Button fx:id="addCat" mnemonicParsing="false" onAction="#irAddCategoria" text="Button" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Categoría">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Text>
+                        <Button fx:id="addCat" mnemonicParsing="false" onAction="#irAddCategoria" prefHeight="26.0" prefWidth="106.0" stylesheets="@estiloBotones.css" text="CATEGORÍA" />
                      </children>
                   </VBox>
                </children>
@@ -99,10 +108,10 @@
       </VBox>
       <TableView fx:id="visor" prefHeight="400.0" prefWidth="482.0">
         <columns>
-          <TableColumn fx:id="gasto" prefWidth="119.20001220703125" text="Gasto" />
-            <TableColumn fx:id="categoria" prefWidth="93.5999755859375" text="Categoría" />
-          <TableColumn fx:id="coste" prefWidth="69.60003662109375" text="Coste" />
-            <TableColumn fx:id="fecha" prefWidth="99.2000732421875" text="Fecha" />
+          <TableColumn fx:id="gasto" prefWidth="119.20001220703125" style="-fx-background-color: #7E9472; -fx-text-fill: #FFFFFF;" text="Gasto" />
+            <TableColumn fx:id="categoria" prefWidth="93.5999755859375" style="-fx-background-color: #7E9472;" text="Categoría" />
+          <TableColumn fx:id="coste" prefWidth="69.60003662109375" style="-fx-background-color: #7E9472;" text="Coste" />
+            <TableColumn fx:id="fecha" prefWidth="95.99995117187501" style="-fx-background-color: #7E9472;" text="Fecha" />
         </columns>
       </TableView>
    </children>

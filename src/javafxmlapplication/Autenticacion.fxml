@@ -23,9 +23,15 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                <children>
-                  <Label text="Usuario*" />
+                  <Label text="Usuario*">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Label>
                   <TextField fx:id="usuario" maxWidth="-Infinity" prefWidth="200.0" />
-                  <Label text="Contraseña*" />
+                  <Label text="Contraseña*">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Label>
                   <PasswordField fx:id="password" maxWidth="-Infinity" prefWidth="200.0" />
                </children>
                <opaqueInsets>

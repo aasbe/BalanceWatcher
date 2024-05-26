@@ -111,7 +111,7 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" wrappingWidth="79.46990966796875">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="System Bold Italic" size="15.0" />
                      </font></Text>
                   <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0">
                      <font>
