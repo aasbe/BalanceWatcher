@@ -120,10 +120,22 @@
                </VBox.margin>
             </HBox>
             <ListView fx:id="listaCategorias" prefHeight="250.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="428.0" spacing="35.0">
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="428.0" spacing="300.0">
                <children>
-                  <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" stylesheets="@estiloBotones.css" text="Añadir Categoría" />
-                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" stylesheets="@estiloBotones.css" text="Eliminar Categoría" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="247.0" layoutY="10.0" mnemonicParsing="false" onAction="#eliminarCategoria" style="-fx-background-color: #ff0000;" stylesheets="@estiloBotones.cs" text="Eliminar Categoría" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
+                  <Button fx:id="addCat" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#irAddCategoria" style="-fx-background-color: #64bcff;" text="Añadir Categoría" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect></Button>
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />
