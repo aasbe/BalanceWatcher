@@ -75,7 +75,7 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <VBox alignment="CENTER" prefWidth="578.0" spacing="20.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="544.0" spacing="20.0" HBox.hgrow="ALWAYS">
          <children>
             <HBox alignment="CENTER" prefHeight="54.0" prefWidth="578.0">
                <children>
@@ -98,18 +98,21 @@
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font></Text>
-                  <Label fx:id="nick" prefHeight="17.0" prefWidth="80.0" />
+                  <Label fx:id="nick" prefHeight="18.0" prefWidth="343.0" />
+                  <Button fx:id="verFactura" mnemonicParsing="false" onAction="#seleccionar" prefHeight="26.0" prefWidth="92.0" text="Ver factura" />
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-            <TableView fx:id="visor" editable="true" prefHeight="265.0" prefWidth="578.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+            <TableView fx:id="visor" editable="true" prefHeight="198.0" prefWidth="498.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
                <columns>
-                  <TableColumn fx:id="gasto" prefWidth="119.20001220703125" text="Gasto" />
-                  <TableColumn fx:id="categoria" prefWidth="93.5999755859375" text="Categoría" />
-                  <TableColumn fx:id="costeT" prefWidth="69.60003662109375" text="Coste" />
-                  <TableColumn fx:id="fechaT" prefWidth="99.2000732421875" text="Fecha" />
+                  <TableColumn fx:id="gasto" prefWidth="115.20000916719437" text="Gasto" />
+                  <TableColumn fx:id="categoria" prefWidth="98.4000244140625" text="Categoría" />
+                  <TableColumn fx:id="costeT" prefWidth="55.20001220703125" text="Coste" />
+                  <TableColumn fx:id="unitsT" prefWidth="32.79998779296875" text="nº" />
+                  <TableColumn fx:id="fechaT" prefWidth="78.4000244140625" text="Fecha" />
+                  <TableColumn fx:id="descripcionT" prefWidth="206.4000244140625" text="Descripción" />
                </columns>
             </TableView>
             <HBox alignment="CENTER" spacing="100.0">
@@ -123,8 +126,14 @@
             </HBox>
          </children>
          <HBox.margin>
-            <Insets left="20.0" right="20.0" />
+            <Insets left="15.0" />
          </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER">
+         <children>
+            <ImageView fx:id="facturaT" fitHeight="181.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox />
+         </children>
       </VBox>
    </children>
 </HBox>

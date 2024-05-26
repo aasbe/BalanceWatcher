@@ -27,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Acount;
@@ -69,6 +70,10 @@ public class VerGastosController implements Initializable {
     @FXML
     private Button cerrarS;
     @FXML
+    private ImageView facturaT;
+    @FXML
+    private Button verFactura;
+    @FXML
     private TableView visor;
     @FXML
     private TableColumn <Charge, String> gasto; // <From Type, Type gonnabe>
@@ -78,6 +83,10 @@ public class VerGastosController implements Initializable {
     private TableColumn <Charge, Double> costeT;
     @FXML
     private TableColumn <Charge, LocalDate> fechaT;
+    @FXML
+    private TableColumn <Charge, String> descripcionT;
+    @FXML
+    private TableColumn <Charge, Integer> unitsT;
     
     private ObservableList<Charge> todosGastos = FXCollections.observableArrayList();
     private ObservableList<Charge> gastoSelect;
@@ -159,7 +168,10 @@ public class VerGastosController implements Initializable {
                         };
             }
         });
+        unitsT.setCellValueFactory(new PropertyValueFactory<Charge, Integer>("units"));
         fechaT.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
+        descripcionT.setCellValueFactory(new PropertyValueFactory<Charge, String>("description"));
+        
         
         visor.setItems(todosGastos);
         gastoSelect = visor.getSelectionModel().getSelectedItems();
@@ -167,7 +179,8 @@ public class VerGastosController implements Initializable {
 
     @FXML
     public void update (ActionEvent event) throws IOException {
-        
+        gastoSelect = visor.getSelectionModel().getSelectedItems();
+        if (!gastoSelect.isEmpty()) {
         gastoActual = gastoSelect.get(0);
        
         
@@ -183,7 +196,17 @@ public class VerGastosController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Actualizar gasto");
         stage.show();
+        }
         
+    }
+    
+    @FXML
+    public void seleccionar (ActionEvent event) throws IOException {
+        gastoSelect = visor.getSelectionModel().getSelectedItems();
+        if (!gastoSelect.isEmpty()) {
+        gastoActual = gastoSelect.get(0);
+        facturaT.setImage(gastoActual.getImageScan());
+        }
         
     }
     
