@@ -30,6 +30,8 @@ public class CategoriaController {
     private Scene scene;
     private Parent root;
     
+/*   @FXML
+    public boolean ventana = false;*/
     @FXML
     private Button volver;
     @FXML
@@ -45,10 +47,11 @@ public class CategoriaController {
     @FXML
     public void addCategoria(ActionEvent event) throws IOException  {
         String Categoria = categoria.getText();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCategorias.fxml"));
+        root = loader.load();
+        VerCategoriasController controllerVerCat = loader.getController();
        
-       /* FXMLLoader loader = new FXMLLoader(getClass().getResource("VerCategorias.fxml"));
-        root2 = loader.load();
-        VerCategoriasController controllerVerCat = loader.getController();*/
+       
         try{
         
             if (Categoria.isEmpty()) {
@@ -59,17 +62,21 @@ public class CategoriaController {
             }
             else {
     boolean cat = Acount.getInstance().registerCategory(categoria.getText(), descripcion.getText());
+    controllerVerCat.actualizarCategorias();
    
     if (cat) {
         
        /* controllerVerCat.actualizar = true;*/
-        /*((Button)event.getSource()).getScene().getWindow().hide(); pop up */
-        root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
+        
+        
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Categorías");
         stage.show();
+        
+        /*  ((Button)event.getSource()).getScene().getWindow().hide();  /*Pop-up*/
+        
     }
     }
         }
@@ -105,15 +112,16 @@ public class CategoriaController {
     
     @FXML
     public void cancel(ActionEvent event) throws IOException {
-
+       /* if (ventana ==false) {*/
         root = FXMLLoader.load(getClass().getResource("VerCategorias.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Categorías");
-        stage.show();
-       /* Stage myStage= (Stage) this.volver.getScene().getWindow(); CERRARÍA DEL TODO
-        myStage.close();/*También se puede hide, no sé la diferencia*/
+        stage.show();}
+       /* else {
+       Stage myStage= (Stage) this.volver.getScene().getWindow(); //CERRARÍA DEL TODO
+        myStage.close();}/*También se puede hide, no sé la diferencia*/
         
-    }
+    
 }

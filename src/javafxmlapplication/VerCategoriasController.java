@@ -218,6 +218,7 @@ public class VerCategoriasController implements Initializable {
     @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));
+       /* stage = new Stage ();*/
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); /*Aquí, para pop up new Stage*/
         scene = new Scene(root);
         stage.setScene(scene);

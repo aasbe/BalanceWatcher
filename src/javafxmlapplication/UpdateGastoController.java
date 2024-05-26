@@ -38,19 +38,19 @@ import javafx.util.Callback;
 import model.Acount;
 import model.AcountDAOException;
 import model.Category;
+import model.Charge;
 
 
-public class GastoController implements Initializable{
+public class UpdateGastoController implements Initializable{
     
     private Stage stage;
     private Scene scene;
     private Parent root;
     
-
     @FXML
     private Button volver;
     @FXML
-    private Button aceptar;
+    private Button actualizar;
     @FXML
     private Button nuevaCategoria;
     @FXML
@@ -58,22 +58,30 @@ public class GastoController implements Initializable{
     @FXML
     private ComboBox categoria;
     @FXML
-    private TextField titulo;
+    public TextField titulo;
     @FXML
-    private TextField descripcion;
+    public TextField descripcion;
     @FXML
-    private TextField coste;
+    public TextField coste;
     @FXML
-    private TextField cantidad;
+    public TextField cantidad;
     @FXML
-    private DatePicker fecha;
+    public DatePicker fecha;
     @FXML
     private List<Category> todasCategorias;
     @FXML
     private ImageView marco;
+    @FXML
+    public Charge gastoUpdate;
     
     private FileChooser fileChooser;
     private Image imagenCargada = null;
+    
+    String nnombre;
+    String ndescripcion;
+    Double ncoste;
+    Integer ncantidad;
+
     
    /* @FXML
     private Label descifrar;
@@ -84,7 +92,7 @@ public class GastoController implements Initializable{
     
     @Override
     public void initialize (URL url, ResourceBundle rb) {
-        try {
+        try {                   
         todasCategorias = (Acount.getInstance().getUserCategories());
         /*Category cat2 = todasCategorias.get(0);
         String adaptado = cat2.getName();
@@ -96,7 +104,7 @@ public class GastoController implements Initializable{
                 errorUs.setHeaderText("No hay categorías de gastos registradas");
                 errorUs.showAndWait();
         } catch (IOException ex) {
-            Logger.getLogger(GastoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateGastoController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         categoria.getItems().addAll(todasCategorias);
@@ -132,25 +140,34 @@ public class GastoController implements Initializable{
             }
         });
         
-       /* categoria.setOnAction(this::descif);*/
     }   
     
-    
     @FXML
+    public void displayInit (Charge gastoPas) {
+        gastoUpdate = gastoPas;
+        Integer unidades = gastoPas.getUnits();
+        Double costeD = gastoPas.getCost();
+        titulo.setText(gastoPas.getName());
+        descripcion.setText(gastoPas.getDescription());
+        coste.setText(costeD.toString());
+        cantidad.setText(unidades.toString());
+        Image actual = gastoPas.getImageScan();
+        marco.setImage(actual);
+    }
+    
+ /*   @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
-
-        
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = new Stage();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Añadir categoría");
         stage.show();
-    }
+    }*/
     
     
     @FXML
-    public void addCharge(ActionEvent event) throws IOException, NumberFormatException{
+    public void confirmar (ActionEvent event) throws IOException, NumberFormatException{
         try {
             String Titulo = titulo.getText();
         int cantidadI = Integer.parseInt(cantidad.getText());
@@ -170,29 +187,24 @@ public class GastoController implements Initializable{
             error.showAndWait();
             }
             else {
-            boolean gast = Acount.getInstance().registerCharge(Titulo, descripcion.getText(), 
-                    costeD, cantidadI, imagenCargada, Fecha, cate);
                                                                 /*Añadir factura opcional*/
-        
-            if (gast) {
+            gastoUpdate.setName(Titulo);
+            gastoUpdate.setDescription(descripcion.getText());
+            gastoUpdate.setCost(costeD);
+            gastoUpdate.setUnits(cantidadI);
+            gastoUpdate.setImageScan(imagenCargada);
+            gastoUpdate.setDate(Fecha);
+            gastoUpdate.setCategory(cate);
+            
         root = FXMLLoader.load(getClass().getResource("VerGastos.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
         stage.setTitle("Gastos");
-        stage.show();
-            }
+        stage.show();              
     }
     }
     }
-    catch (AcountDAOException error){
-    
-    Alert errorUs = new Alert(Alert.AlertType.ERROR);
-                errorUs.setTitle("Error");
-                errorUs.setHeaderText("Campos necesarios no rellenados.");
-                errorUs.showAndWait();
-                }
-        
      catch (NumberFormatException ex) {
         Alert excN = new Alert(Alert.AlertType.ERROR);
                 excN.setTitle("Error");
@@ -249,7 +261,7 @@ public class GastoController implements Initializable{
                 errorUs.setHeaderText("No hay categorías de gastos registradas");
                 errorUs.showAndWait();
         } catch (IOException ex) {
-            Logger.getLogger(GastoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateGastoController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         categoria.getItems().clear();
@@ -291,15 +303,12 @@ public class GastoController implements Initializable{
     @FXML
     public void cancel(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("PRINCIPAL.fxml"));
+        root = FXMLLoader.load(getClass().getResource("VerGastos.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
         Scene scene = new Scene(root,800,400);
         stage.setScene(scene);
-        stage.setTitle("Principal");
-        stage.show();
-       /* Stage myStage= (Stage) this.volver.getScene().getWindow();*/
-       /* myStage.close();/*También se puede hide, no sé la diferencia*/
-        
+        stage.setTitle("Gastos");
+        stage.show();    
     }
 }
 /*

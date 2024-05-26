@@ -25,6 +25,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -49,6 +50,10 @@ public class PRINCIPALController implements Initializable {
     private Button verCat;
     @FXML
     private Button addCat;
+    @FXML
+    private TextArea gastoTotal;
+    @FXML
+    private Double gastoTot = 0.0;
     @FXML
     private Button perfil; // Botón para acceder al perfil
     @FXML
@@ -127,6 +132,7 @@ public class PRINCIPALController implements Initializable {
                     protected void updateItem(Double item, boolean empty) {
                         super.updateItem(item, empty);
                         if (item != null) {
+                            
                             setText(item + " €");
                         } else {
                             setText(null);
@@ -157,10 +163,16 @@ public class PRINCIPALController implements Initializable {
                         }              
         });*/
        
-        
+        getGastoTotal();
     }
     
-
+    @FXML
+    public void getGastoTotal () {
+        /*gastoTot = item.doubleValue() + gastoTot;*/
+        gastoTot++;
+      gastoTotal.setText(gastoTot.toString());
+        
+    }
     
     @FXML
     public void irVerGastos(ActionEvent event) throws IOException {
@@ -221,7 +233,8 @@ public class PRINCIPALController implements Initializable {
     
     public void addGasto(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Gasto.fxml"));
-        stage = new Stage();
+        /*stage = new Stage();*/
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Añadir gasto");
@@ -231,7 +244,8 @@ public class PRINCIPALController implements Initializable {
     @FXML
     private void irAddCategoria(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Categoria.fxml"));
-        stage = new Stage();
+       /* stage = new Stage();*/
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Añadir categoría");

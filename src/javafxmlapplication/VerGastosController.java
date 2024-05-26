@@ -19,11 +19,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -38,6 +40,16 @@ public class VerGastosController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    public TextField titulo;
+    @FXML
+    public TextField descripcion;
+    @FXML
+    public TextField coste;
+    @FXML
+    public TextField cantidad;
+    @FXML
+    public DatePicker fecha;
     @FXML
     private Button inicio;
     @FXML
@@ -63,14 +75,17 @@ public class VerGastosController implements Initializable {
     @FXML
     private TableColumn <Charge, Category> categoria; 
     @FXML
-    private TableColumn <Charge, Double> coste;
+    private TableColumn <Charge, Double> costeT;
     @FXML
-    private TableColumn <Charge, LocalDate> fecha;
+    private TableColumn <Charge, LocalDate> fechaT;
     
     private ObservableList<Charge> todosGastos = FXCollections.observableArrayList();
     private ObservableList<Charge> gastoSelect;
     private List <Charge> todosGas;
-    private Charge gastoActual;
+    
+    @FXML
+    public Charge gastoActual;
+    
     
     
     String usuario;
@@ -126,9 +141,9 @@ public class VerGastosController implements Initializable {
                         };
             }
         });
-        coste.setCellValueFactory(new PropertyValueFactory<Charge, Double>("cost"));
+        costeT.setCellValueFactory(new PropertyValueFactory<Charge, Double>("cost"));
         /*Añadir € */
-        coste.setCellFactory(new Callback<TableColumn<Charge, Double>, TableCell<Charge,Double>>() {
+        costeT.setCellFactory(new Callback<TableColumn<Charge, Double>, TableCell<Charge,Double>>() {
             @Override
             public TableCell<Charge, Double> call(TableColumn<Charge, Double> param) {
                 return new TableCell<Charge, Double>() {
@@ -144,13 +159,34 @@ public class VerGastosController implements Initializable {
                         };
             }
         });
-        fecha.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
+        fechaT.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
         
         visor.setItems(todosGastos);
         gastoSelect = visor.getSelectionModel().getSelectedItems();
     }
 
-
+    @FXML
+    public void update (ActionEvent event) throws IOException {
+        
+        gastoActual = gastoSelect.get(0);
+       
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateGasto.fxml"));
+        root = loader.load();
+        UpdateGastoController controllerVerGast = loader.getController();
+        
+        controllerVerGast.displayInit(gastoActual);
+        /*System.out.println(gastoActual.getName());*/
+       /* root = FXMLLoader.load(getClass().getResource("UpdateGasto.fxml"));*/
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root,800,600);
+        stage.setScene(scene);
+        stage.setTitle("Actualizar gasto");
+        stage.show();
+        
+        
+    }
+    
     @FXML
     public void irPrincipal(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("PRINCIPAL.fxml"));
@@ -234,10 +270,10 @@ public class VerGastosController implements Initializable {
                         };
             }
         });
-        coste.getColumns().clear();
-        coste.setCellValueFactory(new PropertyValueFactory<Charge, Double>("cost"));
+        costeT.getColumns().clear();
+        costeT.setCellValueFactory(new PropertyValueFactory<Charge, Double>("cost"));
         /*Añadir € */
-        coste.setCellFactory(new Callback<TableColumn<Charge, Double>, TableCell<Charge,Double>>() {
+        costeT.setCellFactory(new Callback<TableColumn<Charge, Double>, TableCell<Charge,Double>>() {
             @Override
             public TableCell<Charge, Double> call(TableColumn<Charge, Double> param) {
                 return new TableCell<Charge, Double>() {
@@ -253,8 +289,8 @@ public class VerGastosController implements Initializable {
                         };
             }
         });
-        fecha.getColumns().clear();
-        fecha.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
+        fechaT.getColumns().clear();
+        fechaT.setCellValueFactory(new PropertyValueFactory<Charge, LocalDate>("date"));
         
         
         visor.setItems(todosGastos);
@@ -283,6 +319,7 @@ public class VerGastosController implements Initializable {
         if (alert.showAndWait().get() == ButtonType.OK) {
         eliminar = Acount.getInstance().removeCharge(gastoActual);
        actualizarGastos();
+       
         }
             }
     }
