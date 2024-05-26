@@ -2,13 +2,19 @@ package javafxmlapplication;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormatSymbols;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -51,7 +58,13 @@ public class PRINCIPALController implements Initializable {
     @FXML
     private Button addCat;
     @FXML
+    private ComboBox año;
+    @FXML
+    private ComboBox<String> mes;
+    @FXML
     private TextArea gastoTotal;
+        @FXML
+    private TextArea gastoParcial;
     @FXML
     private Double gastoTot = 0.0;
     @FXML
@@ -74,6 +87,7 @@ public class PRINCIPALController implements Initializable {
     
     private ObservableList<Charge> todosGastos = FXCollections.observableArrayList();
     private List <Charge> todosGas;
+    private List <LocalDate> todasFechas;
     
     String usuario;
 
@@ -163,24 +177,89 @@ public class PRINCIPALController implements Initializable {
                         }              
         });*/
        
-        getGastoTotal();
-        sumColumn(visor);
+       
+    // Extraer los años únicos de las fechas y añadirlos al ComboBox
+    Set<Integer> uniqueYears = todosGastos.stream()
+        .map(charge -> charge.getDate().getYear())
+        .collect(Collectors.toSet());
+    año.getItems().addAll(uniqueYears);
+    
+        Set<Month> uniqueMonths = todosGastos.stream()
+        .map(charge -> charge.getDate().getMonth())
+        .collect(Collectors.toSet());
+        
+        DateFormatSymbols dfs = new DateFormatSymbols(new Locale("es", "ES"));
+        String[] monthNames = dfs.getMonths();
+        for (Month month : uniqueMonths) {
+            mes.getItems().add(monthNames[month.getValue() - 1].toLowerCase());
+        }
+    /*mes.getItems().addAll(uniqueMonths); 4 últimas líneas, en inglés por defecto en 1*/
+    
+
+
+    // Configurar el filtro basado en el año seleccionado
+    FilteredList<Charge> filteredList = new FilteredList<>(todosGastos, p -> true);
+    visor.setItems(filteredList);
+
+    año.valueProperty().addListener((obs, oldYear, newYear) -> applyFilters(filteredList,getMonthFromName(mes.getValue()), (Integer)newYear));
+    mes.valueProperty().addListener((obs, oldMonth, newMonth) -> {
+             Month selectedMonth = null;
+    if (newMonth != null && !newMonth.isEmpty()) {
+        selectedMonth = getMonthFromName(newMonth);
+    }
+    applyFilters(filteredList, selectedMonth, (Integer) año.getValue());
+});
+     
+        getGastoTotal(visor);
     }
     
+    private void applyFilters(FilteredList<Charge> filteredList, Month selectedMonth, Integer selectedYear) {
+
+        filteredList.setPredicate(charge -> {
+            /*return selectedYear == null || charge.getDate().getYear() == selectedYear;  Soles any */
+            boolean matchesYear = (selectedYear == null) || charge.getDate().getYear() == selectedYear;
+            boolean matchesMonth = (selectedMonth == null) || charge.getDate().getMonth()== selectedMonth;
+
+            return matchesYear && matchesMonth;
+        });
+
+        getGastoParcial(filteredList);
+    }
+    /*
+    filteredList.setPredicate(charge -> {
+            boolean matchesYear = (selectedYear == null) || charge.getDate().getYear() == selectedYear;
+            boolean matchesMonth = (selectedMonth == null) || charge.getDate().getMonth().getValue() == getMonthValue(selectedMonth);
+
+            return matchesYear && matchesMonth;
+        });
+    */
+    
+    private Month getMonthFromName(String monthName) {
+    DateFormatSymbols dfs = new DateFormatSymbols(new Locale("es", "ES"));
+    String[] monthNames = dfs.getMonths();
+    for (int i = 0; i < monthNames.length; i++) {
+        if (monthNames[i].toLowerCase().equals(monthName.toLowerCase())) {
+            return Month.of(i + 1);
+        }
+    }
+    return null; // Si el nombre del mes no es válido
+}
     @FXML
-    public void getGastoTotal () {
-        /*gastoTot = item.doubleValue() + gastoTot;*/
-        gastoTot++;
-      gastoTotal.setText(gastoTot.toString());
+    public void getGastoParcial (FilteredList<Charge> filteredList) {
+        Double sum2 = 0.0;
+        for (Charge cargoSumar : filteredList) {
+            sum2 += cargoSumar.getCost();
+        }
+        gastoParcial.setText(sum2.toString()+" €");
         
     }
     
-        private void sumColumn(TableView<Charge> tablaVisor) {
+        private void getGastoTotal(TableView<Charge> tablaVisor) {
         Double sum = 0.0;
         for (Charge cargoSumar : visor.getItems()) {
             sum += cargoSumar.getCost();
         }
-        gastoTotal.setText(sum.toString());
+        gastoTotal.setText(sum.toString()+" €");
     }
     
     @FXML
