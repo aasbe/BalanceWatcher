@@ -164,6 +164,7 @@ public class PRINCIPALController implements Initializable {
         });*/
        
         getGastoTotal();
+        sumColumn(visor);
     }
     
     @FXML
@@ -172,6 +173,14 @@ public class PRINCIPALController implements Initializable {
         gastoTot++;
       gastoTotal.setText(gastoTot.toString());
         
+    }
+    
+        private void sumColumn(TableView<Charge> tablaVisor) {
+        Double sum = 0.0;
+        for (Charge cargoSumar : visor.getItems()) {
+            sum += cargoSumar.getCost();
+        }
+        gastoTotal.setText(sum.toString());
     }
     
     @FXML

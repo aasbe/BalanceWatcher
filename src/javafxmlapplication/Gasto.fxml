@@ -32,7 +32,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox alignment="CENTER" prefHeight="191.0" prefWidth="311.0" spacing="10.0">
+                  <VBox alignment="CENTER" prefHeight="215.0" prefWidth="310.0" spacing="10.0">
                      <children>
                               <Label text="Título*">
                            <font>
@@ -45,7 +45,7 @@
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="descripcion" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="267.0" />
+                        <TextArea fx:id="descripcion" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="74.0" prefRowCount="2" prefWidth="283.0" wrapText="true" />
                               <Label prefWidth="36.0" text="Coste*">
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
