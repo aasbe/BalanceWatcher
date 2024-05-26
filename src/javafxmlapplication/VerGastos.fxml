@@ -117,11 +117,6 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" stylesheets="@estiloBotones.css" text="Añadir nuevo gasto">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Button>
             <TableView fx:id="visor" editable="true" maxHeight="-Infinity" prefHeight="199.0" prefWidth="491.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
                <columns>
                   <TableColumn fx:id="gasto" text="Gasto" />
@@ -132,10 +127,11 @@
                   <TableColumn fx:id="descripcionT" prefWidth="150.0" text="Descripción" />
                </columns>
             </TableView>
-            <HBox alignment="CENTER" spacing="250.0">
+            <HBox alignment="CENTER" spacing="30.0">
                <children>
-                  <Button fx:id="actualizar" maxHeight="-Infinity" mnemonicParsing="false" onAction="#update" prefHeight="40.0" stylesheets="@estiloBotones.css" text="Actualizar gasto" />
-                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#eliminarGasto" prefHeight="40.0" stylesheets="@estiloBotones.css" text="Eliminar gasto" />
+                  <Button fx:id="eliminar" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#eliminarGasto" prefHeight="40.0" style="-fx-background-color: #ff0000ff;" stylesheets="@estiloBotones.css" text="Eliminar gasto" />
+                  <Button fx:id="actualizar" maxHeight="-Infinity" mnemonicParsing="false" onAction="#update" prefHeight="40.0" style="-fx-background-color: #64bcff;" stylesheets="@estiloBotones.css" text="Actualizar gasto" />
+                  <Button fx:id="addGas" mnemonicParsing="false" onAction="#addGasto" stylesheets="@estiloBotones.css" text="Añadir nuevo gasto" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
